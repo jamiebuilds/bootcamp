@@ -1,0 +1,5 @@
+@function be-defined() {
+  $bootcamp-should-b-text: 'be';
+  $bootcamp-should-b-value: 'defined';
+  @return $bootcamp-should-a-value != undefined;
+}
