@@ -1,0 +1,23 @@
+@include xdefine("xDefine") {
+  @include it("shouldnt run") {
+    @include should(null, false);
+  }
+
+  @include define("normal submodule") {
+    @include it("shouldnt run sub-modules") {
+      @include should(null, false);
+    }
+  }
+}
+
+@include define("xDefine") {
+  @include xdefine("Submodule") {
+    @include it("shouldnt run sub-modules") {
+      @include should(null, false);
+    }
+  }
+
+  @include it("should run after xdefined sub-modules") {
+    @include should(null, true);
+  }
+}

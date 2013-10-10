@@ -1,0 +1,9 @@
+@include define("xIt") {
+  @include xit("shouldnt run a test") {
+    @include should(null, false);
+  }
+
+  @include it("should run a later test") {
+    @include should(null, true);
+  }
+}

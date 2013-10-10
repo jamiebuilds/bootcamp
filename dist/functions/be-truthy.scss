@@ -1,0 +1,5 @@
+@function be-truthy() {
+  $bootcamp-should-b-text: 'be';
+  $bootcamp-should-b-value: 'truthy';
+  @return not not $bootcamp-should-a-value;
+}

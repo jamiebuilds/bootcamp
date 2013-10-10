@@ -1,0 +1,7 @@
+@mixin xit($bootcamp-canceled) {
+  $bootcamp-skipping: true;
+  @include it($bootcamp-canceled) {
+    @content;
+  }
+  $bootcamp-skipping: false;
+}

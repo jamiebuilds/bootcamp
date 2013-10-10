@@ -1,0 +1,14 @@
+@include define("Be Undefined") {
+  @include it("should expect falsy values to be falsy") {
+    @include should( expect( false ), to( be-falsy()));
+    @include should( expect( null  ), to( be-falsy()));
+
+  }
+
+  @include it("should expect truthy values not to be falsy") {
+    @include should( expect( true      ), not-to( be-falsy()));
+    @include should( expect( 0         ), not-to( be-falsy()));
+    @include should( expect( 1         ), not-to( be-falsy()));
+    @include should( expect( undefined ), not-to( be-falsy()));
+  }
+}

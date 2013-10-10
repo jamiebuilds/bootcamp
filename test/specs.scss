@@ -1,0 +1,22 @@
+@import "../dist/bootcamp";
+
+$bootcamp-setting-verbose: false;
+
+@include runner-start;
+
+@import "mixins/define";
+@import "mixins/xdefine";
+@import "mixins/it";
+@import "mixins/xit";
+@import "mixins/should";
+
+@import "functions/expect";
+@import "functions/to";
+@import "functions/not-to";
+@import "functions/be";
+@import "functions/equal";
+@import "functions/be-truthy";
+@import "functions/be-falsy";
+@import "functions/be-undefined";
+
+@include runner-end;

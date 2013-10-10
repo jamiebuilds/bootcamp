@@ -1,0 +1,51 @@
+{
+  "name": "Bootcamp",
+  "version": "0.0.1",
+  "description": "A pure SASS testing framework in the style of Jasmine",
+  "keywords": [
+    "bootcamp",
+    "sass",
+    "scss",
+    "test",
+    "jasmine"
+  ],
+  "homepage": "https://github.com/tctcl/bootcamp",
+  "bugs": "https://github.com/tctcl/bootcamp/issues",
+  "author": {
+    "name": "Tactical",
+    "url": "https://github.com/tctcl"
+  },
+  "contributors": [
+    {
+      "name": "James Kyle",
+      "email": "me@thejameskyle.com",
+      "url": "https://github.com/thejameskyle"
+    }
+  ],
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tctcl/bootcamp.git"
+  },
+  "scripts": {},
+  "bin": {},
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-init": "~0.2.1"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tctcl/bootcamp/blob/master/LICENSE.md"
+    }
+  ],
+  "preferGlobal": true
+}

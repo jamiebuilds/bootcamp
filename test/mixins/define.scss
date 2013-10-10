@@ -1,0 +1,11 @@
+@include define("Define") {
+  @include it("should define a module") {
+    @include should(null, true);
+  }
+
+  @include define("Define") {
+    @include it("should define a sub-module") {
+      @include should(null, true);
+    }
+  }
+}
