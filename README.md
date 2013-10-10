@@ -1,4 +1,4 @@
-Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png)](https://travis-ci.org/tctcl/bootcamp)
+Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png)](https://travis-ci.org/tctcl/bootcamp?branch=master)
 ========
 
 A pure SASS testing framework in the style of Jasmine.
