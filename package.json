@@ -27,7 +27,9 @@
     "type": "git",
     "url": "git://github.com/tctcl/bootcamp.git"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "grunt test"
+  },
   "bin": {},
   "dependencies": {
     "grunt": "~0.4.1",
