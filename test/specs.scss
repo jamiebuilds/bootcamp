@@ -19,5 +19,6 @@ $bootcamp-setting-verbose: false;
 @import "functions/be-falsy";
 @import "functions/be-undefined";
 @import "functions/be-defined";
+@import "functions/be-null";
 
 @include runner-end;
