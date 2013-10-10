@@ -3,6 +3,8 @@ Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png?branch=master
 
 A pure SASS testing framework in the style of Jasmine.
 
+#### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/introduction)
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
