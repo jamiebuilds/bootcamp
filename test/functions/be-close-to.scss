@@ -1,0 +1,24 @@
+@include define("Be close to") {
+  @include it("should expect close numbers to be close to") {
+    @include should( expect( 1 ), to( be-close-to( 1.01,  1 )));
+    @include should( expect( 1 ), to( be-close-to( 0.99,  1 )));
+    @include should( expect( 1 ), to( be-close-to( 0.90,  0 )));
+    @include should( expect( 1 ), to( be-close-to( 2.00, -1 )));
+    @include should( expect( 1 ), to( be-close-to( 0.00, -1 )));
+  }
+
+  @include it("should expect far numbers not to be close to") {
+    @include should( expect( 1 ), not-to( be-close-to(   1.10,  1 )));
+    @include should( expect( 1 ), not-to( be-close-to(   0.90,  1 )));
+    @include should( expect( 1 ), not-to( be-close-to(   2.00,  0 )));
+    @include should( expect( 1 ), not-to( be-close-to(  30.00, -1 )));
+    @include should( expect( 1 ), not-to( be-close-to( -10.00, -1 )));
+  }
+
+  @include it("should expect non-numbers not to be close to") {
+    @include should( expect( a     ), not-to( be-close-to( 1, 1 )));
+    @include should( expect( true  ), not-to( be-close-to( 1, 1 )));
+    @include should( expect( false ), not-to( be-close-to( 1, 1 )));
+    @include should( expect( null  ), not-to( be-close-to( 1, 1 )));
+  }
+}
