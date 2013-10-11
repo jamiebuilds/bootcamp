@@ -1,0 +1,34 @@
+@include define("Be Undefined") {
+  $a: true, true, true;
+  $b: "foo", "bar", "baz";
+  $c: 100, 0.2, 12;
+  $d: undefined, null, false;
+
+  @include it("should expect list with value to contain") {
+    @include should( expect( $a ), to( contain(  true )));
+    @include should( expect( $b ), to( contain( "bar" )));
+    @include should( expect( $c ), to( contain(  100  )));
+    @include should( expect( $d ), to( contain(  null )));
+  }
+
+  @include it("should expect list without value not to contain") {
+    @include should( expect( $a ), not-to( contain( false )));
+    @include should( expect( $b ), not-to( contain( "fiz" )));
+    @include should( expect( $c ), not-to( contain(  300  )));
+    @include should( expect( $d ), not-to( contain( "sod" )));
+  }
+
+  @include it("should expect item with value to contain") {
+    @include should( expect(  true ), to( contain(  true )));
+    @include should( expect( "bar" ), to( contain( "bar" )));
+    @include should( expect(  100  ), to( contain(  100  )));
+    @include should( expect(  null ), to( contain(  null )));
+  }
+
+  @include it("should expect item without value not to contain") {
+    @include should( expect(  true ), not-to( contain( false )));
+    @include should( expect( "foo" ), not-to( contain( "fiz" )));
+    @include should( expect(  200  ), not-to( contain(  300  )));
+    @include should( expect(  null ), not-to( contain( "sod" )));
+  }
+}

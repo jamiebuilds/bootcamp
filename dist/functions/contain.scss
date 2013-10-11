@@ -1,0 +1,5 @@
+@function contain($this) {
+  $bootcamp-should-b-text: 'contain';
+  $bootcamp-should-b-value: $this;
+  @return not not index($bootcamp-should-a-value, $this);
+}
