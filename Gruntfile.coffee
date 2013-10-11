@@ -25,9 +25,13 @@ module.exports = (grunt) ->
       tasks: ['sass', 'bootcamp']
 
   grunt.registerTask 'bootcamp', 'Log Bootcamp Results.', ->
-    contents = fs.readFileSync './test/results.css', 'utf8'
-    trim = (str) -> str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-    grunt.log.writeln trim contents.match( /\/\* START TEST RUNNER \*\/((.|\n)*)\/\* END TEST RUNNER \*\// )[1]
+    trim = (str) -> str.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
+    contents = trim fs.readFileSync('./test/results.css', 'utf8').match( /\/\* START TEST RUNNER \*\/((.|\n)*)\/\* END TEST RUNNER \*\// )[1]
+
+    grunt.log.writeln contents
+
+    if (contents.indexOf('FAILED') > -1 )
+      grunt.fatal 'Bootcamp Tests Failed'
 
   # Tasks
   grunt.registerTask 'default', ['sass', 'bootcamp', 'watch']
