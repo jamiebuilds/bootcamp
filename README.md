@@ -1,7 +1,7 @@
 Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png?branch=master)](https://travis-ci.org/tctcl/bootcamp)
 ========
 
-A pure SASS testing framework in the style of Jasmine.
+Jasmine-style BDD testing written in Sass for Sass.
 
 #### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/introduction)
 
