@@ -4,6 +4,8 @@
 @import "variables/helpers";
 @import "variables/should";
 
+@import "utils/power";
+
 @import "mixins/define";
 @import "mixins/xdefine";
 @import "mixins/it";
@@ -23,6 +25,7 @@
 @import "functions/be-null";
 @import "functions/be-less-than";
 @import "functions/be-greater-than";
+@import "functions/be-close-to";
 
 // @import "bootcamp";    // import bootcamp
 // @include runner-start; // include runner-start

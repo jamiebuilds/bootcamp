@@ -4,6 +4,8 @@ $bootcamp-setting-verbose: false;
 
 @include runner-start;
 
+@import "utils/power";
+
 @import "mixins/define";
 @import "mixins/xdefine";
 @import "mixins/it";
@@ -22,5 +24,6 @@ $bootcamp-setting-verbose: false;
 @import "functions/be-null";
 @import "functions/be-less-than";
 @import "functions/be-greater-than";
+@import "functions/be-close-to";
 
 @include runner-end;

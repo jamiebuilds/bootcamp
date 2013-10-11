@@ -1,0 +1,10 @@
+@function be-close-to($this, $precision) {
+  $bootcamp-should-b-text: 'be close to';
+  $bootcamp-should-b-value: $this;
+
+  @if type-of($bootcamp-should-a-value) == 'number' {
+    @return abs($this - $bootcamp-should-a-value) < (bootcamp-util-power(10, -$precision) / 2);
+  } @else {
+    @return false;
+  }
+}
