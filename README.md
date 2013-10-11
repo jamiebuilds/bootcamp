@@ -5,6 +5,8 @@ A pure SASS testing framework in the style of Jasmine.
 
 #### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/introduction)
 
+#### [See Example Test Suite](https://github.com/tctcl/bootcamp/wiki/example-test-suite)
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
