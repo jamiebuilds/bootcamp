@@ -25,5 +25,6 @@ $bootcamp-setting-verbose: false;
 @import "functions/be-less-than";
 @import "functions/be-greater-than";
 @import "functions/be-close-to";
+@import "functions/contain";
 
 @include runner-end;
