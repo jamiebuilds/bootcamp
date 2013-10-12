@@ -1,0 +1,15 @@
+{
+  "name": "bootcamp",
+  "version": "0.0.2",
+  "homepage": "http://github.com/tctcl/bootcamp",
+  "main": "dist/bootcamp.scss",
+  "ignore": [
+    "test",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.coffee"
+  ]
+}
