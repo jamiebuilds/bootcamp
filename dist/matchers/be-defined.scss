@@ -1,0 +1,3 @@
+@function be-defined() {
+  @return should("be", "defined", actual() != undefined);
+}
