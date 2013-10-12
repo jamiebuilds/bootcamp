@@ -1,0 +1,10 @@
+@function be-greater-than($this) {
+  $actual: actual();
+  $when: false;
+
+  @if type-of($actual) == "number" {
+    $when: $actual > $this;
+  }
+
+  @return should("be greater than", $this, $when);
+}

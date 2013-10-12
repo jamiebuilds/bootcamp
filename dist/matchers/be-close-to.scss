@@ -1,0 +1,10 @@
+@function be-close-to($this, $precision) {
+  $actual: actual();
+  $when: false;
+
+  @if type-of($actual) == "number" {
+    $when: abs($this - $actual) < (bootcamp-util-power(10, -$precision) / 2);
+  }
+
+  @return should("be close to", $this, $when);
+}
