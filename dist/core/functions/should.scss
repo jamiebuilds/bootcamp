@@ -1,0 +1,5 @@
+@function should($be, $something, $when) {
+  $bootcamp-should-b-text: $be;
+  $bootcamp-should-b-value: $something;
+  @return $when;
+}
