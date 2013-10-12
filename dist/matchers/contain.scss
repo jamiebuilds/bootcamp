@@ -1,0 +1,3 @@
+@function contain($this) {
+  @return should("contain", $this, not not index(actual(), $this));
+}
