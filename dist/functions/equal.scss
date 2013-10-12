@@ -1,5 +1,0 @@
-@function equal($this) {
-  $bootcamp-should-b-text: "equal";
-  $bootcamp-should-b-value: $this;
-  @return $bootcamp-should-a-value == $this and type-of($bootcamp-should-a-value) == "number";
-}
