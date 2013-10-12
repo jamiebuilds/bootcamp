@@ -1,4 +1,4 @@
 @function to($this) {
-  $bootcamp-should-b-text: 'to ' + $bootcamp-should-b-text;
+  $bootcamp-should-b-text: "to " + $bootcamp-should-b-text;
   @return $this;
 }

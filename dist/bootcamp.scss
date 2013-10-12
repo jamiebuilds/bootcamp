@@ -1,35 +1,29 @@
 @import "variables/settings";
 
-@import "variables/trackers";
 @import "variables/helpers";
 @import "variables/should";
+@import "variables/trackers";
 
 @import "utils/power";
 
 @import "mixins/define";
-@import "mixins/xdefine";
 @import "mixins/it";
-@import "mixins/xit";
-@import "mixins/should";
 @import "mixins/runner";
+@import "mixins/should";
+@import "mixins/xdefine";
+@import "mixins/xit";
 
-@import "functions/expect";
-@import "functions/to";
-@import "functions/not-to";
-@import "functions/be";
-@import "functions/equal";
-@import "functions/be-truthy";
-@import "functions/be-falsy";
-@import "functions/be-undefined";
-@import "functions/be-defined";
-@import "functions/be-null";
-@import "functions/be-less-than";
-@import "functions/be-greater-than";
 @import "functions/be-close-to";
+@import "functions/be-defined";
+@import "functions/be-falsy";
+@import "functions/be-greater-than";
+@import "functions/be-less-than";
+@import "functions/be-null";
+@import "functions/be-truthy";
+@import "functions/be-undefined";
+@import "functions/be";
 @import "functions/contain";
-
-// @import "bootcamp";    // import bootcamp
-// @include runner-start; // include runner-start
-// @import "app";         // import your files
-// @import "specs";       // import your tests
-// @include runner-end;   // include runner-end
+@import "functions/equal";
+@import "functions/expect";
+@import "functions/not-to";
+@import "functions/to";

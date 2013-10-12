@@ -23,6 +23,17 @@ git clone git@github.com:tctcl/bootcamp.git && cd bootcamp
 bower install bootcamp --save-dev
 ```
 
+## Test File
+
+```scss
+@import "bootcamp";    // import bootcamp
+@import "app";         // import your files
+
+@include runner-start; // include runner-start
+@import "specs";       // import your tests
+@include runner-end;   // include runner-end
+```
+
 ## License
 
 This project is provided under the terms of the [MIT License](LICENSE.md).
