@@ -1,4 +1,4 @@
-Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png?branch=master)](https://travis-ci.org/tctcl/bootcamp)
+Bootcamp [![Build Status](https://travis-ci.org/tctcl/bootcamp.png?branch=master)](https://travis-ci.org/tctcl/bootcamp) [![Dependency Status](https://david-dm.org/tctcl/bootcamp.png)](https://david-dm.org/tctcl/bootcamp) [![devDependency Status](https://david-dm.org/tctcl/bootcamp/dev-status.png)](https://david-dm.org/tctcl/bootcamp#info=devDependencies)
 ========
 
 Jasmine-style BDD testing written in Sass for Sass.
