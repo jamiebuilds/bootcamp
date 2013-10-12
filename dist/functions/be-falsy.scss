@@ -1,5 +1,5 @@
 @function be-falsy() {
-  $bootcamp-should-b-text: 'be';
-  $bootcamp-should-b-value: 'falsy';
+  $bootcamp-should-b-text: "be";
+  $bootcamp-should-b-value: "falsy";
   @return not $bootcamp-should-a-value;
 }
