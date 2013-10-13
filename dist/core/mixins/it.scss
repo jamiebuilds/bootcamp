@@ -4,7 +4,7 @@
   @if not $bootcamp-skipping {
     $bootcamp-passing-assertions: true;
 
-    #{$bootcamp-current-definition} #{$bootcamp-new-test} {
+    #{$bootcamp-current-description} #{$bootcamp-new-test} {
       @content;
 
       @if $bootcamp-passing-assertions {

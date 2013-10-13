@@ -1,4 +1,4 @@
-@include define("Actual") {
+@include describe("Actual") {
   @include it("should return the actual value") {
     $expect: expect(1);
     @include should( expect( actual() ), to( be( 1 )));

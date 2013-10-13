@@ -1,6 +1,6 @@
 $test: true;
 
-@include define("xIt") {
+@include describe("xIt") {
   @include xit("shouldnt run a test") {
     $test: false;
     @include should(null, $test);

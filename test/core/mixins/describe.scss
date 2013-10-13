@@ -1,0 +1,11 @@
+@include describe("Describe") {
+  @include it("should describe a module") {
+    @include should(null, true);
+  }
+
+  @include describe("Describe") {
+    @include it("should describe a sub-module") {
+      @include should(null, true);
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@include define("Equal") {
+@include describe("Equal") {
   @include it("should expect two equal numbers to be equal") {
     @include should( expect(  1 ), to( equal(  1 )));
     @include should( expect( -1 ), to( equal( -1 )));
