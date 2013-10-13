@@ -1,0 +1,29 @@
+@mixin it($bootcamp-new-test) {
+  $bootcamp-number-of-tests: $bootcamp-number-of-tests + 1;
+
+  @if not $bootcamp-skipping {
+    $bootcamp-passing-assertions: true;
+
+    #{$bootcamp-current-description} #{$bootcamp-new-test} {
+      @content;
+
+      @if $bootcamp-passing-assertions {
+        @if $bootcamp-setting-verbose {
+          Test: Passed;
+        }
+        $bootcamp-number-of-passed: $bootcamp-number-of-passed + 1;
+        $bootcamp-output-string: $bootcamp-output-string + " ✔";
+      }
+
+      @else {
+        Test: Failed;
+        $bootcamp-output-string: $bootcamp-output-string + " ✗";
+        $bootcamp-number-of-failed: $bootcamp-number-of-failed + 1;
+      }
+    }
+
+    $bootcamp-passing-assertions: null;
+  } @else {
+    $bootcamp-number-of-skipped: $bootcamp-number-of-skipped + 1;
+  }
+}

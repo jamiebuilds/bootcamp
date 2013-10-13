@@ -1,13 +1,15 @@
 {
   "name": "Bootcamp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A pure SASS testing framework in the style of Jasmine",
   "keywords": [
     "bootcamp",
     "sass",
     "scss",
     "test",
-    "jasmine"
+    "jasmine",
+    "gruntplugin",
+    "bower"
   ],
   "homepage": "https://github.com/tctcl/bootcamp",
   "bugs": "https://github.com/tctcl/bootcamp/issues",
@@ -30,15 +32,21 @@
   "scripts": {
     "test": "grunt test"
   },
+  "files": [
+    "tasks/bootcamp.coffee"
+  ],
   "bin": {},
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-init": "~0.2.1"
+    "grunt-init": "~0.2.1",
+    "colors": "~0.6.2"
   },
   "devDependencies": {},
-  "peerDependencies": {},
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.2.10"

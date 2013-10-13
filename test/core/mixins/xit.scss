@@ -1,0 +1,12 @@
+$test: true;
+
+@include describe("xIt") {
+  @include xit("shouldnt run a test") {
+    $test: false;
+    @include should(null, $test);
+  }
+
+  @include it("should run a later test") {
+    @include should(null, $test);
+  }
+}

@@ -1,0 +1,10 @@
+@include describe("Actual") {
+  @include it("should return the actual value") {
+    $expect: expect(1);
+    @include should( expect( actual() ), to( be( 1 )));
+
+    $expect: expect( false );
+    $expect: expect("hello");
+    @include should( expect( actual() ), to( be( "hello" )));
+  }
+}

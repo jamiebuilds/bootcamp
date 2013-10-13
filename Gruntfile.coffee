@@ -1,5 +1,3 @@
-fs = require 'fs'
-
 # global module: false
 module.exports = (grunt) ->
 
@@ -10,7 +8,7 @@ module.exports = (grunt) ->
 
   # Grunt Tasks
   grunt.initConfig
-    meta: version: '0.0.1'
+    meta: version: '0.0.3'
 
     # Sass
     sass: test:
@@ -19,19 +17,16 @@ module.exports = (grunt) ->
         loadPath: './dist'
       files: './test/results.css': './test/specs.scss'
 
+    # Bootcamp
+    bootcamp: dist:
+      files: src: ['./test/results.css']
+
     # Watch
     watch: dist:
       files: ['./dist/**/*.scss', './test/**/*.scss']
       tasks: ['sass', 'bootcamp']
 
-  grunt.registerTask 'bootcamp', 'Log Bootcamp Results.', ->
-    trim = (str) -> str.replace(/^\s\s*/, '').replace(/\s\s*$/, '')
-    contents = trim fs.readFileSync('./test/results.css', 'utf8').match( /\/\* START TEST RUNNER \*\/((.|\n)*)\/\* END TEST RUNNER \*\// )[1]
-
-    grunt.log.writeln contents
-
-    if (contents.indexOf('FAILED') > -1 )
-      grunt.fatal 'Bootcamp Tests Failed'
+  grunt.loadTasks 'tasks'
 
   # Tasks
   grunt.registerTask 'default', ['sass', 'bootcamp', 'watch']

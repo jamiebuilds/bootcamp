@@ -1,0 +1,20 @@
+@mixin describe($bootcamp-new-description) {
+  @if not $bootcamp-skipping {
+    $bootcamp-previous-description: $bootcamp-current-description;
+
+    @if $bootcamp-current-description-level > 0 {
+      $bootcamp-current-description: $bootcamp-previous-description + " " + $bootcamp-new-description;
+    } @else {
+      $bootcamp-current-description: $bootcamp-new-description;
+    }
+
+    $bootcamp-current-description-level: $bootcamp-current-description-level + 1;
+
+    @content;
+
+    $bootcamp-current-description: $bootcamp-previous-description;
+    $bootcamp-current-description-level: $bootcamp-current-description-level - 1;
+  } @else {
+    @content;
+  }
+}

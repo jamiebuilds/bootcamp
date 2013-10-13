@@ -1,0 +1,16 @@
+@include describe("Be greater than") {
+  @include it("should expect larger numbers to be greater than") {
+    @include should( expect( 2 ), to( be-greater-than(  1 )));
+    @include should( expect( 0 ), to( be-greater-than( -1 )));
+  }
+
+  @include it("should expect smaller numbers not to be greater than") {
+    @include should( expect(  1 ), not-to( be-greater-than( 2 )));
+    @include should( expect( -1 ), not-to( be-greater-than( 0 )));
+  }
+
+  @include it("should expect non-numbers not to be greater than") {
+    @include should( expect( "foo" ), not-to( be-greater-than( 1 )));
+    @include should( expect( false ), not-to( be-greater-than( 1 )));
+  }
+}

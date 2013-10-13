@@ -1,0 +1,4 @@
+@function equal($this) {
+  $actual: actual();
+  @return should("equal", $this, $actual == $this and type-of($actual) == "number");
+}

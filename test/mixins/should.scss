@@ -1,5 +1,0 @@
-@include define("Should") {
-  @include it("should run a test") {
-    @include should(null, true);
-  }
-}
