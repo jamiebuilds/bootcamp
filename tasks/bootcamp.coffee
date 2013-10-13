@@ -1,9 +1,18 @@
 'use strict'
 
 bootcamp = require '../dist/bootcamp.coffee'
+colors = require 'colors'
 
 module.exports = (grunt) ->
+
   grunt.registerMultiTask 'bootcamp', 'Jasmine-style BDD testing written in Sass for Sass.', ->
+
+    showChecklist = (checklist) ->
+      list = checklist + ''
+      list = list.replace(/✔/g, '✔'.green)
+      list = list.replace(/✗/g, '✗'.red)
+      grunt.log.writeln list
+
     @files.forEach (f) ->
       f.src.filter (filepath) ->
 
@@ -26,11 +35,11 @@ module.exports = (grunt) ->
               return true
 
             else
-              grunt.log.success tests.checklist
+              showChecklist tests.checklist
               grunt.log.success tests.stats
               return true
 
           else
-            grunt.log.warn tests.checklist
+            showChecklist tests.checklist
             grunt.fail.warn tests.stats
             return false
