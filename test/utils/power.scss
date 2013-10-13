@@ -1,4 +1,4 @@
-@include define("Power Util") {
+@include describe("Power Util") {
   @include it("should expect positive values to be calculated correctly") {
     @include should( expect( bootcamp-util-power( 10, 2) ), to( equal(  100 )));
     @include should( expect( bootcamp-util-power(  2, 2) ), to( equal(    4 )));

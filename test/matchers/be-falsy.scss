@@ -1,4 +1,4 @@
-@include define("Be Undefined") {
+@include describe("Be Undefined") {
   @include it("should expect falsy values to be falsy") {
     @include should( expect( false ), to( be-falsy()));
     @include should( expect( null  ), to( be-falsy()));

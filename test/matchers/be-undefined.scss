@@ -1,4 +1,4 @@
-@include define("Be Undefined") {
+@include describe("Be Undefined") {
   @include it("should expect to be undefined") {
     @include should( expect( undefined ), to( be-undefined()));
   }
