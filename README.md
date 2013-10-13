@@ -5,7 +5,7 @@ Jasmine-style BDD testing written in Sass for Sass.
 
 #### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/introduction)
 
-#### [Read Setup](https://github.com/tctcl/bootcamp/wiki)
+#### [Read Setup](https://github.com/tctcl/bootcamp/wiki/setup)
 
 #### [See Example Test Suite](https://github.com/tctcl/bootcamp/wiki/example-test-suite)
 
