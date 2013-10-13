@@ -4,27 +4,30 @@ $bootcamp-setting-verbose: false;
 
 @include runner-start;
 
+@import "core/mixins/describe";
+@import "core/mixins/it";
+@import "core/mixins/should";
+@import "core/mixins/xdescribe";
+@import "core/mixins/xit";
+
+@import "core/functions/actual";
+@import "core/functions/expect";
+@import "core/functions/not-to";
+@import "core/functions/should";
+@import "core/functions/to";
+
 @import "utils/power";
 
-@import "mixins/define";
-@import "mixins/it";
-@import "mixins/should";
-@import "mixins/xdefine";
-@import "mixins/xit";
-
-@import "functions/be-close-to";
-@import "functions/be-defined";
-@import "functions/be-falsy";
-@import "functions/be-greater-than";
-@import "functions/be-less-than";
-@import "functions/be-null";
-@import "functions/be-truthy";
-@import "functions/be-undefined";
-@import "functions/be";
-@import "functions/contain";
-@import "functions/equal";
-@import "functions/expect";
-@import "functions/not-to";
-@import "functions/to";
+@import "matchers/be-close-to";
+@import "matchers/be-defined";
+@import "matchers/be-falsy";
+@import "matchers/be-greater-than";
+@import "matchers/be-less-than";
+@import "matchers/be-null";
+@import "matchers/be-truthy";
+@import "matchers/be-undefined";
+@import "matchers/be";
+@import "matchers/contain";
+@import "matchers/equal";
 
 @include runner-end;

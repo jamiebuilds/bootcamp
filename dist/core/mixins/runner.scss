@@ -1,0 +1,21 @@
+@mixin runner-start {
+  /* >> Bootcamp >> */
+}
+
+@mixin runner-end {
+
+  @if $bootcamp-number-of-tests == 0 {
+    $bootcamp-output-string: "No tests were found";
+  }
+
+  Test Results {
+    Passed:     $bootcamp-number-of-failed == 0;
+    Checklist:  #{ $bootcamp-output-string        };
+    Tests:      #{ $bootcamp-number-of-tests      };
+    Assertions: #{ $bootcamp-number-of-assertions };
+    Failures:   #{ $bootcamp-number-of-failed     };
+    Skipped:    #{ $bootcamp-number-of-skipped    };
+  }
+
+  /* << Bootcamp << */
+}

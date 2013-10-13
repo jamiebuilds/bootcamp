@@ -1,0 +1,11 @@
+///
+// xDescribe
+///
+
+@mixin xdescribe($bootcamp-canceled) {
+  $bootcamp-skipping: true;
+  @include describe($bootcamp-canceled) {
+    @content;
+  }
+  $bootcamp-skipping: false;
+}

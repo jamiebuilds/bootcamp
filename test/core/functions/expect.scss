@@ -1,0 +1,6 @@
+@include describe("Expect") {
+  @include it("should expect something simple") {
+    @include should( expect( 1 ), to( be( 1 )));
+    @include should( expect( a ), to( be( a )));
+  }
+}

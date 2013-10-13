@@ -1,0 +1,10 @@
+@function be-less-than($this) {
+  $actual: actual();
+  $when: false;
+
+  @if type-of($actual) == "number" {
+    $when: $actual < $this;
+  }
+
+  @return should("be less than", $this, $when);
+}
