@@ -1,68 +1,36 @@
 'use strict'
 
-fs = require 'fs'
-
-bootcamp = (filepath) ->
-  file    = fs.readFileSync filepath, 'utf8'
-  camp    = file.match( /\/\* >> Bootcamp >> \*\/((.|\n)*)\/\* << Bootcamp << \*\// )?[1]
-  results = camp?.match( /Test Results \{((.|\n)*)\}/ )?[1]
-  specs   = camp?.replace(results, '').replace(/Test Results \{\}|\{|\}|;|:/g, '')
-
-  getProperty = (before) ->
-    str = results?.match( new RegExp before + ': ((.|\n)*?);' )?[1].trim()
-    str = parseInt str unless isNaN str
-    str
-
-  return {
-    camp:       camp?.trim()
-    results:    results?.trim()
-    specs:      specs?.trim()
-    passed:     getProperty('Passed') == 'true'
-    stats:      getProperty 'Stats'
-    tests:      getProperty 'Tests'
-    assertions: getProperty 'Assertions'
-    failures:   getProperty 'Failures'
-    skipped:    getProperty 'Skipped'
-  }
+bootcamp = require '../dist/bootcamp.coffee'
 
 module.exports = (grunt) ->
-
   grunt.registerMultiTask 'bootcamp', 'Jasmine-style BDD testing written in Sass for Sass.', ->
-    # Merge task-specific and/or target-specific options with these defaults.
-    options = @options
-      verbose: false
-
     @files.forEach (f) ->
-      src = f.src.filter (filepath) ->
+      f.src.filter (filepath) ->
 
-        # Warn on and remove invalid source files (if nonull was set).
         unless grunt.file.exists filepath
           grunt.log.warn 'Source file "' + filepath + '" not found.'
           return false
 
         else
-          try
-            tests = bootcamp( filepath )
+          tests = bootcamp.test filepath
 
-            grunt.log.writeln '\n' + tests.specs + '\n' if tests.specs
-            grunt.log.writeln tests.stats if tests.stats
+          if tests.incomplete
+            grunt.fail.warn tests.error
+            return true
 
-            str  = (tests.tests      || 0) + ' tests, '
-            str += (tests.assertions || 0) + ' assertions, '
-            str += (tests.failures   || 0) + ' failures, '
-            str += (tests.skipped    || 0) + ' skipped.'
+          else if tests.passed
 
-            if tests.passed or tests.tests == undefined
-              grunt.log.success str
-
-              if tests.tests == undefined
-                throw 'No Tests Found'
-
+            if tests.tests == 0
+              grunt.log.writeln tests.stats
+              grunt.log.warn 'Your tests probably haven\'t been properly set up.\nTake a look at https://github.com/tctcl/bootcamp/wiki/setup'
               return true
-            else
-              grunt.log.warn str
-              return false
 
-          catch error
-            grunt.log.warn error
-            grunt.log.warn 'Your tests probably haven\'t been properly set up.\nTake a look at https://github.com/tctcl/bootcamp/wiki/setup'
+            else
+              grunt.log.success tests.checklist
+              grunt.log.success tests.stats
+              return true
+
+          else
+            grunt.log.warn tests.checklist
+            grunt.fail.warn tests.stats
+            return false

@@ -5,11 +5,13 @@ Jasmine-style BDD testing written in Sass for Sass.
 
 #### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/introduction)
 
+#### [Read Setup](https://github.com/tctcl/bootcamp/wiki)
+
 #### [See Example Test Suite](https://github.com/tctcl/bootcamp/wiki/example-test-suite)
 
 ## Install
 
-In the future, Bootcamp will hopefully be available in more ways, for now you can either clone the repo yourself or install it via [bower](http://bower.io/). If you would like, please help create a [grunt plugin](http://gruntjs.com/), a [yeoman generator](http://yeoman.io/), a [ruby gem](http://rubygems.org/), or any other package manager you'd like out there.
+In the future, Bootcamp will hopefully be available in more ways, for now you can either clone the repo yourself, install via [bower](http://bower.io/), or install via [npm](https://npmjs.org/) as a grunt plugin. If you would like, please help create a [yeoman generator](http://yeoman.io/), a [ruby gem](http://rubygems.org/), or any other package manager you'd like out there.
 
 #### Git
 
@@ -23,15 +25,10 @@ git clone git@github.com:tctcl/bootcamp.git && cd bootcamp
 bower install bootcamp --save-dev
 ```
 
-## Test File
+#### npm
 
-```scss
-@import "bootcamp";    // import bootcamp
-@import "app";         // import your files
-
-@include runner-start; // include runner-start
-@import "specs";       // import your tests
-@include runner-end;   // include runner-end
+```
+npm install bootcamp --save-dev
 ```
 
 ## License
