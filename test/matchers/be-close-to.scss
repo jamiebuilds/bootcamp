@@ -1,4 +1,4 @@
-@include define("Be close to") {
+@include describe("Be close to") {
   @include it("should expect close numbers to be close to") {
     @include should( expect( 1 ), to( be-close-to( 1.01,  1 )));
     @include should( expect( 1 ), to( be-close-to( 0.99,  1 )));
