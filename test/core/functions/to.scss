@@ -1,4 +1,4 @@
-@include define("To") {
+@include describe("To") {
   @include it("should expect to do something simple") {
     @include should(expect(1), to(be(1)));
   }

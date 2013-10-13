@@ -1,4 +1,4 @@
-@include define("Should") {
+@include describe("Should") {
   @include it("should set the text and value") {
     $when: should("be the correct", "value", true);
     $text: $bootcamp-should-b-text;

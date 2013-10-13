@@ -4,10 +4,10 @@ $bootcamp-setting-verbose: false;
 
 @include runner-start;
 
-@import "core/mixins/define";
+@import "core/mixins/describe";
 @import "core/mixins/it";
 @import "core/mixins/should";
-@import "core/mixins/xdefine";
+@import "core/mixins/xdescribe";
 @import "core/mixins/xit";
 
 @import "core/functions/actual";

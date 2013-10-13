@@ -1,4 +1,4 @@
-@include define("Be greater than") {
+@include describe("Be greater than") {
   @include it("should expect larger numbers to be greater than") {
     @include should( expect( 2 ), to( be-greater-than(  1 )));
     @include should( expect( 0 ), to( be-greater-than( -1 )));

@@ -1,4 +1,4 @@
-@include define("Be Null") {
+@include describe("Be Null") {
   @include it("should expect null to be null") {
     @include should( expect( null ), to( be-null()));
   }

@@ -1,4 +1,4 @@
-@include define("Be less than") {
+@include describe("Be less than") {
   @include it("should expect smaller numbers to be less than") {
     @include should( expect(  1 ), to( be-less-than( 2 )));
     @include should( expect( -1 ), to( be-less-than( 0 )));
