@@ -1,16 +1,16 @@
 @mixin runner-start {
-  /* START TEST RUNNER */
+  /* >> Bootcamp >> */
 }
 
 @mixin runner-end {
-  TEST RESULTS {
-    Tests: #{$bootcamp-output-string};
-    #{ if($bootcamp-number-of-failed > 0, 'FAILED', 'PASSED') }:
-      #{$bootcamp-number-of-tests     } tests#{","}
-      #{$bootcamp-number-of-assertions} assertions#{","}
-      #{$bootcamp-number-of-failed    } failures#{","}
-      #{$bootcamp-number-of-skipped   } skipped;
+  Test Results {
+    Passed:     $bootcamp-number-of-failed == 0;
+    Stats:      #{ $bootcamp-output-string        };
+    Tests:      #{ $bootcamp-number-of-tests      };
+    Assertions: #{ $bootcamp-number-of-assertions };
+    Failures:   #{ $bootcamp-number-of-failed     };
+    Skipped:    #{ $bootcamp-number-of-skipped    };
   }
 
-  /* END TEST RUNNER */
+  /* << Bootcamp << */
 }
