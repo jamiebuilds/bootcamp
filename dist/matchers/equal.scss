@@ -1,4 +1,12 @@
-@function equal($this) {
+@function equal($list) {
   $actual: actual();
-  @return should("equal", $this, $actual == $this and type-of($actual) == "number");
+  $when: true;
+
+  @for $i from 1 through length($list) {
+    @if length($actual) >= $i and nth($actual, $i) != nth($list, $i) {
+      $when: false;
+    }
+  }
+
+  @return should("equal", $list, $when);
 }

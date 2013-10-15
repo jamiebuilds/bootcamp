@@ -1,0 +1,31 @@
+@include describe("Have length of") {
+  @include it("should expect equal length lists to have length of") {
+    @include should( expect( (1, 2, 3) ), to( have-length-of(3)));
+    @include should( expect( (1)       ), to( have-length-of(1)));
+    @include should( expect( ()        ), to( have-length-of(0)));
+  }
+
+  @include it("should expect longer lists not to have length of") {
+    @include should( expect( (1, 2, 3) ), not-to( have-length-of( 2)));
+    @include should( expect( (1)       ), not-to( have-length-of( 0)));
+    @include should( expect( ()        ), not-to( have-length-of(-1)));
+  }
+
+  @include it("should expect shorter lists not to have length of") {
+    @include should( expect( (1, 2, 3) ), not-to( have-length-of(4)));
+    @include should( expect( (1)       ), not-to( have-length-of(2)));
+    @include should( expect( ()        ), not-to( have-length-of(1)));
+  }
+
+  @include it("should expect other values to have length of 1") {
+    @include should( expect( null      ), to( have-length-of(1)));
+    @include should( expect( undefined ), to( have-length-of(1)));
+    @include should( expect( "string"  ), to( have-length-of(1)));
+  }
+
+  @include it("should expect other values not to have length of 0") {
+    @include should( expect( null      ), not-to( have-length-of(0)));
+    @include should( expect( undefined ), not-to( have-length-of(0)));
+    @include should( expect( "string"  ), not-to( have-length-of(0)));
+  }
+}
