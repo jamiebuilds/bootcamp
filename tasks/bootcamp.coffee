@@ -40,6 +40,7 @@ module.exports = (grunt) ->
               return true
 
           else
+            grunt.log.warn tests.specs
             showChecklist tests.checklist
             grunt.fail.warn tests.stats
             return false
