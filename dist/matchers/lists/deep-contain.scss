@@ -1,0 +1,26 @@
+@function deep-contain($list) {
+  $flattened: actual();
+  $contains-list: true;
+
+  @while $contains-list {
+    $contains-list: false;
+    $temp: $flattened;
+    $flattened: ();
+
+    @each $item in $temp {
+      @if type-of($item) == "list" {
+        @each $_item in $item {
+          @if type-of($_item) == "list" and not $shallow {
+            $contains-list: true;
+          }
+
+          $flattened: append($flattened, $_item, comma);
+        }
+      } @else {
+        $flattened: append($flattened, $item, comma);
+      }
+    }
+  }
+
+  @return should("deep contain", $list, not not index($flattened, $list));
+}
