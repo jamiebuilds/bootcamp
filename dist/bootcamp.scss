@@ -27,6 +27,7 @@
 @import "matchers/lists/be-shorter-than";
 @import "matchers/lists/contain";
 @import "matchers/lists/deep-contain";
+@import "matchers/lists/deep-equal";
 @import "matchers/lists/have-length-of";
 
 @import "matchers/numbers/be-close-to";
