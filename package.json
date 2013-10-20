@@ -1,6 +1,6 @@
 {
   "name": "bootcamp",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A pure SASS testing framework in the style of Jasmine",
   "keywords": [
     "bootcamp",

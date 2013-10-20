@@ -18,16 +18,25 @@ $bootcamp-setting-verbose: false;
 
 @import "utils/power";
 
-@import "matchers/be-close-to";
-@import "matchers/be-defined";
-@import "matchers/be-falsy";
-@import "matchers/be-greater-than";
-@import "matchers/be-less-than";
-@import "matchers/be-null";
-@import "matchers/be-truthy";
-@import "matchers/be-undefined";
 @import "matchers/be";
-@import "matchers/contain";
 @import "matchers/equal";
+
+@import "matchers/lists/be-empty";
+@import "matchers/lists/be-longer-than";
+@import "matchers/lists/be-shorter-than";
+@import "matchers/lists/contain";
+@import "matchers/lists/deep-contain";
+@import "matchers/lists/deep-equal";
+@import "matchers/lists/have-length-of";
+
+@import "matchers/numbers/be-close-to";
+@import "matchers/numbers/be-greater-than";
+@import "matchers/numbers/be-less-than";
+
+@import "matchers/types/be-defined";
+@import "matchers/types/be-falsy";
+@import "matchers/types/be-null";
+@import "matchers/types/be-truthy";
+@import "matchers/types/be-undefined";
 
 @include runner-end;
