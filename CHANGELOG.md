@@ -1,5 +1,9 @@
 # Changelog
 
+#### 0.0.5 - 2013-10-20
+
+- Better Test Output
+
 #### 0.0.4 - 2013-10-19
 
 - Restructuring
