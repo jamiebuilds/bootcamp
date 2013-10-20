@@ -14,7 +14,11 @@
   }
 
   @if not $bootcamp-should-b or $bootcamp-setting-verbose {
-    #{$bootcamp-should-a-text}: #{$bootcamp-should-a-value} #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
+    @if $bootcamp-passing-assertions {
+      #{" ✔"}: #{$bootcamp-should-a-text} #{$bootcamp-should-a-value} #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
+    } @else {
+      #{" ✗"}: #{$bootcamp-should-a-text} #{$bootcamp-should-a-value} #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
+    }
   }
 
   $bootcamp-should-a-text:  null;

@@ -13,6 +13,14 @@ module.exports = (grunt) ->
       list = list.replace(/✗/g, '✗'.red)
       grunt.log.writeln list
 
+    showSpecs = (specs) ->
+      list = specs + ''
+      list = list.replace(/✔/g, '✔'.green)
+      list = list.replace(/✗/g, '✗'.red)
+      list = list.replace(/Test Passed/g, 'Test passed'.green)
+      list = list.replace(/Test Failed/g, 'Test failed'.red)
+      grunt.log.writeln list
+
     @files.forEach (f) ->
       f.src.filter (filepath) ->
 
@@ -35,12 +43,13 @@ module.exports = (grunt) ->
               return true
 
             else
+              showSpecs tests.specs
               showChecklist tests.checklist
               grunt.log.success tests.stats
               return true
 
           else
-            grunt.log.warn tests.specs
+            showSpecs tests.specs
             showChecklist tests.checklist
             grunt.fail.warn tests.stats
             return false
