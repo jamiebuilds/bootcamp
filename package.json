@@ -38,15 +38,17 @@
   ],
   "bin": {},
   "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-sass": "~0.5.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-init": "~0.2.1",
     "colors": "~0.6.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-init": "~0.2.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0"
   },
   "engines": {
     "node": ">=0.8.0",
