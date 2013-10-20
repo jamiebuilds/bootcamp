@@ -19,7 +19,7 @@ module.exports = (grunt) ->
       list = list.replace(/✗/g, '✗'.red)
       list = list.replace(/Test Passed/g, 'Test passed'.green)
       list = list.replace(/Test Failed/g, 'Test failed'.red)
-      grunt.log.writeln list
+      grunt.log.writeln list.trim()
 
     @files.forEach (f) ->
       f.src.filter (filepath) ->
