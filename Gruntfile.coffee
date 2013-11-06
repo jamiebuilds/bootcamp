@@ -15,7 +15,7 @@ module.exports = (grunt) ->
       options:
         style: 'expanded'
         loadPath: './dist'
-      files: './test/results.css': './test/specs.scss'
+      files: './test/results.css': './test/_specs.scss'
 
     # Bootcamp
     bootcamp: dist:
