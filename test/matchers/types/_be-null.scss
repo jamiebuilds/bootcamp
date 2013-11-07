@@ -4,10 +4,10 @@
   }
 
   @include it("should expect other values not to be null") {
-    @include should( expect( 1         ), not-to( be-null()));
-    @include should( expect( a         ), not-to( be-null()));
-    @include should( expect( true      ), not-to( be-null()));
-    @include should( expect( false     ), not-to( be-null()));
-    @include should( expect( undefined ), not-to( be-null()));
+    @include should( expect( 1     ), not-to( be-null()));
+    @include should( expect( a     ), not-to( be-null()));
+    @include should( expect( true  ), not-to( be-null()));
+    @include should( expect( false ), not-to( be-null()));
+    @include should( expect( ""    ), not-to( be-null()));
   }
 }

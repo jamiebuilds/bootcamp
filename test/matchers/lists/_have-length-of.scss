@@ -18,14 +18,14 @@
   }
 
   @include it("should expect other values to have length of 1") {
-    @include should( expect( null      ), to( have-length-of(1)));
-    @include should( expect( undefined ), to( have-length-of(1)));
-    @include should( expect( "string"  ), to( have-length-of(1)));
+    @include should( expect( null     ), to( have-length-of(1)));
+    @include should( expect( false    ), to( have-length-of(1)));
+    @include should( expect( "string" ), to( have-length-of(1)));
   }
 
   @include it("should expect other values not to have length of 0") {
-    @include should( expect( null      ), not-to( have-length-of(0)));
-    @include should( expect( undefined ), not-to( have-length-of(0)));
-    @include should( expect( "string"  ), not-to( have-length-of(0)));
+    @include should( expect( null     ), not-to( have-length-of(0)));
+    @include should( expect( false    ), not-to( have-length-of(0)));
+    @include should( expect( "string" ), not-to( have-length-of(0)));
   }
 }

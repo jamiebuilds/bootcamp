@@ -1,3 +1,0 @@
-@function be-undefined() {
-  @return should("be", "undefined", actual() == undefined);
-}

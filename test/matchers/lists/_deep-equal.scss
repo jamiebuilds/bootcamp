@@ -3,7 +3,7 @@
     $list-1: false, (true, true);
     $list-2: "foo", ("bar", "baz");
     $list-3: 100, (0.2, 12);
-    $list-4: undefined, (null, false);
+    $list-4: null, (null, false);
 
     @include should( expect( $list-1 ), to( deep-equal( $list-1 )));
     @include should( expect( $list-2 ), to( deep-equal( $list-2 )));
@@ -21,8 +21,8 @@
     $list-3a: 100,      (0.2, (12));
     $list-3b: 100, 200, (0.2, (12));
 
-    $list-4a: undefined,        (null, false);
-    $list-4b: undefined, false, (null, false);
+    $list-4a: null,        (null, false);
+    $list-4b: null, false, (null, false);
 
     @include should( expect( $list-1a ), not-to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), not-to( deep-equal( $list-2b )));
@@ -40,8 +40,8 @@
     $list-3a: 100, (     0.2, 12);
     $list-3b: 100, (200, 0.2, 12);
 
-    $list-4a: undefined, (       null, false);
-    $list-4b: undefined, (false, null, false);
+    $list-4a: null, (       null, false);
+    $list-4b: null, (false, null, false);
 
     @include should( expect( $list-1a ), not-to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), not-to( deep-equal( $list-2b )));
@@ -59,8 +59,8 @@
     $list-3a: 100, (0.2, (12));
     $list-3b: 200, (0.2, (12));
 
-    $list-4a: undefined, (null, false);
-    $list-4b: false,     (null, false);
+    $list-4a: null,  (null, false);
+    $list-4b: false, (null, false);
 
     @include should( expect( $list-1a ), not-to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), not-to( deep-equal( $list-2b )));
@@ -78,8 +78,8 @@
     $list-3a: 100, (0.2, (12));
     $list-3b: 100, (200, (12));
 
-    $list-4a: undefined, (null,      (false));
-    $list-4b: undefined, (undefined, (false));
+    $list-4a: null, (false, (false));
+    $list-4b: null, (null,  (false));
 
     @include should( expect( $list-1a ), not-to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), not-to( deep-equal( $list-2b )));
@@ -97,8 +97,8 @@
     $list-3a: 100, 0.2, 12;
     $list-3b: 100, 0.2, 12;
 
-    $list-4a: undefined, null, false;
-    $list-4b: undefined, null, false;
+    $list-4a: false, null, false;
+    $list-4b: false, null, false;
 
     @include should( expect( $list-1a ), to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), to( deep-equal( $list-2b )));
@@ -116,8 +116,8 @@
     $list-3a: 100, 0.2, 12;
     $list-3b: 200, 0.2, 12;
 
-    $list-4a: undefined, null, false;
-    $list-4b: undefined, false, false;
+    $list-4a: false, null, false;
+    $list-4b: false, false, false;
 
     @include should( expect( $list-1a ), not-to( deep-equal( $list-1b )));
     @include should( expect( $list-2a ), not-to( deep-equal( $list-2b )));
@@ -126,19 +126,19 @@
   }
 
   @include it("should expect other equal values to be deep equal") {
-    @include should( expect( true       ), to( deep-equal( true      )));
-    @include should( expect( "foo"      ), to( deep-equal( "foo"     )));
-    @include should( expect( 1          ), to( deep-equal( 1         )));
-    @include should( expect( null       ), to( deep-equal( null      )));
-    @include should( expect( undefined  ), to( deep-equal( undefined )));
+    @include should( expect( true  ), to( deep-equal( true  )));
+    @include should( expect( "foo" ), to( deep-equal( "foo" )));
+    @include should( expect( 1     ), to( deep-equal( 1     )));
+    @include should( expect( null  ), to( deep-equal( null  )));
+    @include should( expect( false ), to( deep-equal( false )));
   }
 
   @include it("should expect other unequal values to be deep equal") {
-    @include should( expect( true       ), not-to( deep-equal( false     )));
-    @include should( expect( "foo"      ), not-to( deep-equal( "bar"     )));
-    @include should( expect( 1          ), not-to( deep-equal( 2         )));
-    @include should( expect( null       ), not-to( deep-equal( undefined )));
-    @include should( expect( undefined  ), not-to( deep-equal( null      )));
+    @include should( expect( true  ), not-to( deep-equal( false )));
+    @include should( expect( "foo" ), not-to( deep-equal( "bar" )));
+    @include should( expect( 1     ), not-to( deep-equal( 2     )));
+    @include should( expect( null  ), not-to( deep-equal( false )));
+    @include should( expect( false ), not-to( deep-equal( null  )));
   }
 
   @include it("should expect empty lists to be deep equal") {

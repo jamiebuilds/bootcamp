@@ -4,7 +4,6 @@
     @include should( expect( a         ), to( be( a         )));
     @include should( expect( true      ), to( be( true      )));
     @include should( expect( false     ), to( be( false     )));
-    @include should( expect( undefined ), to( be( undefined )));
     @include should( expect( null      ), to( be( null      )));
   }
 
@@ -13,7 +12,6 @@
     @include should( expect( a         ), not-to( be( b       )));
     @include should( expect( true      ), not-to( be( false   )));
     @include should( expect( false     ), not-to( be( true    )));
-    @include should( expect( undefined ), not-to( be( defined )));
     @include should( expect( null      ), not-to( be( valid   )));
   }
 }
