@@ -19,13 +19,11 @@
 
   @include it("should expect other values to be longer than 0") {
     @include should( expect( null      ), to( be-longer-than(0)));
-    @include should( expect( undefined ), to( be-longer-than(0)));
     @include should( expect( "string"  ), to( be-longer-than(0)));
   }
 
   @include it("should expect other values to be shorter than 1") {
     @include should( expect( null      ), not-to( be-longer-than(1)));
-    @include should( expect( undefined ), not-to( be-longer-than(1)));
     @include should( expect( "string"  ), not-to( be-longer-than(1)));
   }
 }
