@@ -1,0 +1,29 @@
+@function error($type, $message) {
+  $title: null;
+
+  @if $type == "type" {
+    $title: "TYPE ERROR";
+  }
+
+  @else if $type == "warn" {
+    $title: "WARNING"
+  }
+
+  @else if $type == "dep" {
+    $title: "DEPRECATED"
+  }
+
+  @else if $type == "fatal" {
+    $bootcamp-should-force-error: true;
+    $title: "FATAL ERROR";
+  }
+
+  @else {
+    $bootcamp-should-force-error: true;
+    $title: "ERROR";
+  }
+
+  $bootcamp-should-error: "!" + $title + "! " + $message + ".";
+
+  @return false;
+}

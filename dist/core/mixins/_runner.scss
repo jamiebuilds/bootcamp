@@ -15,6 +15,12 @@
     Assertions: #{ $bootcamp-number-of-assertions };
     Failures:   #{ $bootcamp-number-of-failed     };
     Skipped:    #{ $bootcamp-number-of-skipped    };
+
+    @if $bootcamp-errors != () and $bootcamp-setting-warnings {
+      @each $error in $bootcamp-errors {
+        Error: #{$error};
+      }
+    }
   }
 
   /* << Bootcamp << */
