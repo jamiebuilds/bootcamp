@@ -25,49 +25,9 @@
     @include should(expect( (false, true, false) ), not-to( equal( (true, false, true) )));
   }
 
-  @include it("should expect two equal lists with different seperators to be equal") {
-    @include should(expect( 1 2 3 ),           to( equal( (1, 2, 3) )));
-    @include should(expect( "a" "b" "c" ),     to( equal( ("a", "b", "c") )));
-    @include should(expect( true false true ), to( equal( (true, false, true) )));
-  }
-
-  @include it("should expect two equal lists built up programmatically to be equal") {
-    $numbers: 1, 2, 3;
-    $strings: "a", "b", "c";
-    $booleans: true, false, true;
-
-    $numbers-out:  ();
-    $strings-out:  ();
-    $booleans-out: ();
-
-    @for $i from 1 through 3 {
-      $numbers-out:  append($numbers-out,  nth($numbers,  $i));
-      $strings-out:  append($strings-out,  nth($strings,  $i));
-      $booleans-out: append($booleans-out, nth($booleans, $i));
-    }
-
-    @include should(expect($numbers-out ), to( equal( (1, 2, 3) )));
-    @include should(expect($strings-out ), to( equal( ("a", "b", "c") )));
-    @include should(expect($booleans-out), to( equal( (true, false, true) )));
-  }
-
-  @include it("should expect two unequal lists built up programmatically not to be equal") {
-    $numbers: 1, 2, 3;
-    $strings: "a", "b", "c";
-    $booleans: true, false, true;
-
-    $numbers-out:  ();
-    $strings-out:  ();
-    $booleans-out: ();
-
-    @for $i from 1 through 3 {
-      $numbers-out:  append($numbers-out,  nth($numbers,  $i));
-      $strings-out:  append($strings-out,  nth($strings,  $i));
-      $booleans-out: append($booleans-out, nth($booleans, $i));
-    }
-
-    @include should(expect($numbers-out ), not-to( equal( (3, 2, 1) )));
-    @include should(expect($strings-out ), not-to( equal( ("c", "b", "a") )));
-    @include should(expect($booleans-out), not-to( equal( (false, true, false) )));
+  @include it("should expect two equal lists with different seperators not to be equal") {
+    @include should(expect( 1 2 3 ),           not-to( equal( (1, 2, 3) )));
+    @include should(expect( "a" "b" "c" ),     not-to( equal( ("a", "b", "c") )));
+    @include should(expect( true false true ), not-to( equal( (true, false, true) )));
   }
 }
