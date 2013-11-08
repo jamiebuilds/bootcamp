@@ -17,6 +17,8 @@ $bootcamp-setting-warnings: false;
 @import "core/functions/should";
 @import "core/functions/to";
 
+@import "utils/contain";
+@import "utils/equal";
 @import "utils/power";
 @import "utils/stringify";
 

@@ -1,12 +1,3 @@
-@function equal($list) {
-  $actual: actual();
-  $when: true;
-
-  @for $i from 1 through length($list) {
-    @if length($actual) >= $i and nth($actual, $i) != nth($list, $i) {
-      $when: false;
-    }
-  }
-
-  @return should("equal", $list, $when);
+@function equal($value) {
+  @return should("equal", $value, actual() == $value);
 }
