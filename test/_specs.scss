@@ -18,6 +18,7 @@ $bootcamp-setting-warnings: false;
 @import "core/functions/to";
 
 @import "utils/power";
+@import "utils/stringify";
 
 @import "matchers/be";
 @import "matchers/equal";
