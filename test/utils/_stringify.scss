@@ -1,0 +1,32 @@
+@include describe("Stringify Util") {
+  @include it("should turn normal values into strings") {
+    @include should( expect( bootcamp-util-stringify( 1       ) ), to( be( "1"       )));
+    @include should( expect( bootcamp-util-stringify( true    ) ), to( be( "true"    )));
+    @include should( expect( bootcamp-util-stringify( false   ) ), to( be( "false"   )));
+    @include should( expect( bootcamp-util-stringify( #333333 ) ), to( be( "#333333" )));
+  }
+
+  @include it("should stringify null values") {
+    @include should( expect( bootcamp-util-stringify( null         ) ), to( be( "null"           )));
+    @include should( expect( bootcamp-util-stringify( (null, null) ) ), to( be( "( null, null )" )));
+  }
+
+  @include it("should wrap strings in single quotes") {
+    @include should( expect( bootcamp-util-stringify( ""     ) ), to( be( "''"     )));
+    @include should( expect( bootcamp-util-stringify( "text" ) ), to( be( "'text'" )));
+  }
+
+  @include it("should stringify empty lists") {
+    @include should( expect( bootcamp-util-stringify( ()         ) ), to( be( "(  )"          )));
+    @include should( expect( bootcamp-util-stringify( (1, 2, ()) ) ), to( be( "( 1, 2, ( ) )" )));
+  }
+
+  @include it("should wrap lists in paranthesis") {
+    @include should( expect( bootcamp-util-stringify( (1, 2, 3 )    ) ), to( be( "( 1, 2, 3 )"     )));
+    @include should( expect( bootcamp-util-stringify( (1, ( 2, 3 )) ) ), to( be( "( 1, ( 2, 3 ) )" )));
+  }
+
+  @include it("should display repeated values correctly") {
+    @include should( expect( bootcamp-util-stringify( (1, 2, 1 ) ) ), to( be( "( 1, 2, 1 )" )));
+  }
+}

@@ -5,24 +5,8 @@
 
   $bootcamp-number-of-assertions: $bootcamp-number-of-assertions + 1;
 
-  $bootcamp-should-a-type: type-of($bootcamp-should-a-value);
-  $bootcamp-should-b-type: type-of($bootcamp-should-b-value);
-
-  @if $bootcamp-should-a-value == null {
-    $bootcamp-should-a-value: "null";
-  }
-
-  @if $bootcamp-should-b-value == null {
-    $bootcamp-should-b-value: "null";
-  }
-
-  @if $bootcamp-should-a-value == () {
-    $bootcamp-should-a-value: "()";
-  }
-
-  @if $bootcamp-should-b-value == () {
-    $bootcamp-should-b-value: "()";
-  }
+  $bootcamp-should-a-value: bootcamp-util-stringify($bootcamp-should-a-value);
+  $bootcamp-should-b-value: bootcamp-util-stringify($bootcamp-should-b-value);
 
   @if not $bootcamp-should-b {
     $bootcamp-passing-assertions: false;
@@ -38,12 +22,12 @@
     @if $bootcamp-should-error {
       #{$_bootcamp-assertion-status}:
         #{$bootcamp-should-error}
-        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value} quote($bootcamp-should-a-type)
-        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value} quote($bootcamp-should-b-type);
+        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value}
+        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
     } @else {
       #{$_bootcamp-assertion-status}:
-        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value} quote($bootcamp-should-a-type)
-        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value} quote($bootcamp-should-b-type);
+        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value}
+        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
     }
   }
 
