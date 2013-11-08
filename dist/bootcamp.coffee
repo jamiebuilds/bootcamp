@@ -40,28 +40,36 @@ module.exports =
     # method: getProperty
     ###
 
-    getProperty = (property) ->
-      value = results.match( new RegExp property + ': ((.|\n)*?);' )
+    getProperty = (property, force) ->
+      values = results.match new RegExp property + ': ((.|\n)*?);', 'g'
+      property = []
 
-      unless value?
+      if force and !values? then return property
+
+      unless values?
         error = incomplete: true, error: "No #{property} Found"
         return false
       else
-        value = value[1].trim()
-        value = parseInt value unless isNaN value
+        for value in values
+          value = value.replace(/;/, '')
+          value = value.replace(/(.*:)/, '')
+          value = value.trim()
+          value = parseInt value unless isNaN value
+          property.push value
 
-      return value
+      return property
 
     ###
     # Get Properties
     ###
 
-    passed      = getProperty('Passed') == 'true'
+    passed      = getProperty('Passed').indexOf('true') > -1
     checklist   = getProperty 'Checklist'
     tests       = getProperty 'Tests'
     assertions  = getProperty 'Assertions'
     failures    = getProperty 'Failures'
     skipped     = getProperty 'Skipped'
+    errors      = getProperty 'Error', true
 
     ###
     # Return Any Errors
@@ -86,4 +94,6 @@ module.exports =
       assertions: assertions
       failures:   failures
       skipped:    skipped
+
+      errors:     errors
     }

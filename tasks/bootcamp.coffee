@@ -19,8 +19,17 @@ module.exports = (grunt) ->
       list = list.replace(/✗/g, '✗'.red)
       list = list.replace(/Test Passed/g, 'Test passed'.green)
       list = list.replace(/Test Failed/g, 'Test failed'.red)
+      list = list.replace(/!(.*)!(.*)\./g, '$1:$2.'.yellow)
       list = list.trim()
       grunt.log.writeln '\n' + list + '\n' if list != ''
+
+    showErrors = (errors) ->
+      if !errors then return null
+      grunt.log.writeln ''
+      for error in errors
+        list = error + ''
+        list = list.replace(/!(.*)!(.*)/g, '$1:'.red + '$2'.yellow)
+        grunt.log.writeln list.yellow
 
     @files.forEach (f) ->
       f.src.filter (filepath) ->
@@ -33,7 +42,7 @@ module.exports = (grunt) ->
           tests = bootcamp.test filepath
 
           if tests.incomplete
-            grunt.fail.warn tests.error
+            grunt.fail.warn tests.error.yellow
             return true
 
           else if tests.passed
@@ -47,10 +56,12 @@ module.exports = (grunt) ->
               showSpecs tests.specs
               showChecklist tests.checklist
               grunt.log.success tests.stats
+              showErrors tests.errors
               return true
 
           else
             showSpecs tests.specs
             showChecklist tests.checklist
             grunt.fail.warn tests.stats
+            showErrors tests.errors
             return false
