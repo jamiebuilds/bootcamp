@@ -41,5 +41,7 @@
     }
   }
 
+  $throw: error("dep", "The `deep-equal` matcher has been deprecated, please use the `be` matcher for the same functionality");
+
   @return should("deep equal", $expected, $when);
 }
