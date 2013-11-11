@@ -3,13 +3,13 @@ Bootcamp [![NPM version](https://badge.fury.io/js/bootcamp.png)](http://badge.fu
 
 Jasmine-style BDD testing written in Sass for Sass.
 
-###### [Read Introduction >](https://github.com/tctcl/bootcamp/wiki/introduction)
+###### [Read Introduction >](https://github.com/tctcl/bootcamp/wiki/Introduction)
 
-###### [Read Setup >](https://github.com/tctcl/bootcamp/wiki/setup)
+###### [Read Setup >](https://github.com/tctcl/bootcamp/wiki/Setup)
 
-###### [See Example Test Suite >](https://github.com/tctcl/bootcamp/wiki/example-test-suite)
+###### [See Example Test Suite >](https://github.com/tctcl/bootcamp/wiki/Example-Test-Suite)
 
-###### [Authoring Matchers >](https://github.com/tctcl/bootcamp/wiki/authoring-matchers)
+###### [Authoring Matchers >](https://github.com/tctcl/bootcamp/wiki/Authoring-Matchers)
 
 ## Install
 
