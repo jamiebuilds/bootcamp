@@ -23,15 +23,17 @@
 
   <!-- Initializer -->
   <script>
-    Flatdoc.run({
-      fetcher: Flatdoc.github('tctcl/bootcamp')
-    });
-
     $(function() {
 
       routie('!/wiki/:name', function(name) {
         Flatdoc.run({
           fetcher: Flatdoc.file('wiki/' + name + '.md')
+        });
+      });
+
+      routie('/', function() {
+        Flatdoc.run({
+          fetcher: Flatdoc.github('tctcl/bootcamp')
         });
       });
 
