@@ -1,5 +1,5 @@
 @function to($this) {
-  $bootcamp-should-b-text: "to " + $bootcamp-should-b-text;
+  $bc-expect-text: "to " + $bc-expect-text;
 
   @return $this;
 }

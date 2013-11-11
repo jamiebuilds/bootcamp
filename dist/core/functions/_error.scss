@@ -14,16 +14,16 @@
   }
 
   @else if $type == "fatal" {
-    $bootcamp-should-force-error: true;
+    $bc-error: true;
     $title: "FATAL ERROR";
   }
 
   @else {
-    $bootcamp-should-force-error: true;
+    $bc-error: true;
     $title: "ERROR";
   }
 
-  $bootcamp-should-error: "!" + $title + "! " + $message + ".";
+  $bc-error-text: "!" + $title + "! " + $message + ".";
 
   @return false;
 }

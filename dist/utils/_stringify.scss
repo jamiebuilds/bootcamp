@@ -1,4 +1,4 @@
-@function bootcamp-util-stringify($value, $level: 0) {
+@function bc-util-stringify($value, $level: 0) {
   $result: "";
 
   // We open the bracket
@@ -15,7 +15,7 @@
     @if length($item) > 1 {
 
       // We deal with a nested list
-      $result: unquote("#{$result}#{bootcamp-util-stringify($item, $level + 1)}");
+      $result: unquote("#{$result}#{bc-util-stringify($item, $level + 1)}");
     }
 
     // Else we append the item to $result

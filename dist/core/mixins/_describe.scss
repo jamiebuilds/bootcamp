@@ -1,19 +1,19 @@
-@mixin describe($bootcamp-new-description) {
-  @if not $bootcamp-skipping {
-    $bootcamp-previous-description: $bootcamp-current-description;
+@mixin describe($bc-describe-new) {
+  @if not $bc-skipping {
+    $bc-describe-old: $bc-describe;
 
-    @if $bootcamp-current-description-level > 0 {
-      $bootcamp-current-description: $bootcamp-previous-description + " " + $bootcamp-new-description;
+    @if $bc-describe-depth > 0 {
+      $bc-describe: $bc-describe-old + " " + $bc-describe-new;
     } @else {
-      $bootcamp-current-description: $bootcamp-new-description;
+      $bc-describe: $bc-describe-new;
     }
 
-    $bootcamp-current-description-level: $bootcamp-current-description-level + 1;
+    $bc-describe-depth: $bc-describe-depth + 1;
 
     @content;
 
-    $bootcamp-current-description: $bootcamp-previous-description;
-    $bootcamp-current-description-level: $bootcamp-current-description-level - 1;
+    $bc-describe: $bc-describe-old;
+    $bc-describe-depth: $bc-describe-depth - 1;
   } @else {
     @content;
   }

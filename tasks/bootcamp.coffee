@@ -45,7 +45,7 @@ module.exports = (grunt) ->
             grunt.fail.warn tests.error.yellow
             return true
 
-          else if tests.passed
+          else if tests.success
 
             if tests.tests == 0
               grunt.log.writeln tests.stats
@@ -53,15 +53,15 @@ module.exports = (grunt) ->
               return true
 
             else
-              showSpecs tests.specs
-              showChecklist tests.checklist
-              grunt.log.success tests.stats
-              showErrors tests.errors
+              showSpecs         tests.specs
+              showChecklist     tests.stats
+              grunt.log.success tests.details
+              showErrors        tests.errors
               return true
 
           else
-            showSpecs tests.specs
-            showChecklist tests.checklist
-            grunt.fail.warn tests.stats
-            showErrors tests.errors
+            showSpecs       tests.specs
+            showChecklist   tests.stats
+            grunt.fail.warn tests.details
+            showErrors      tests.errors
             return false
