@@ -46,12 +46,41 @@
       });
     });
   </script>
+
+  <style>
+    hr {
+      margin: 20px 0;
+      height: 0;
+      border: 0 solid #DFE2E7;
+      border-top-width: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .content h1:before,
+      .content h2:before,
+      .content .big-heading:before,
+      body.big-h3 .content h3:before {
+        width: auto;
+        margin: 0 -40px;
+        left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content h1:before,
+      .content h2:before,
+      .content .big-heading:before,
+      body.big-h3 .content h3:before {
+        margin: 0 -20px;
+      }
+    }
+  </style>
 </head>
-<body role='flatdoc' class='no-literate'>
+<body role='flatdoc' class='no-literate large-brief'>
 
   <div class='header'>
     <div class='left'>
-      <a href="#/"><h1>Bootcamp</h1></a>
+      <h1><a href="#!/">Bootcamp</a></h1>
       <ul>
         <li><a href='https://github.com/tctcl/bootcamp'>View on GitHub</a></li>
         <li><a href='https://github.com/tctcl/bootcamp/issues'>Issues</a></li>
