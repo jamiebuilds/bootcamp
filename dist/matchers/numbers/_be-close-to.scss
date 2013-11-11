@@ -3,7 +3,7 @@
   $when: false;
 
   @if type-of($actual) == "number" {
-    $when: abs($this - $actual) < (bootcamp-util-power(10, -$precision) / 2);
+    $when: abs($this - $actual) < (bc-util-power(10, -$precision) / 2);
   } @else {
     $when: error("type", "The `be-close-to` matcher is only for numbers");
   }

@@ -4,20 +4,21 @@
 
 @mixin runner-end {
 
-  @if $bootcamp-number-of-tests == 0 {
-    $bootcamp-output-string: "No tests were found";
+  @if $bc-total == 0 {
+    $b-stats: "No tests were found";
   }
 
   Test Results {
-    Passed:     $bootcamp-number-of-failed == 0;
-    Checklist:  #{ $bootcamp-output-string        };
-    Tests:      #{ $bootcamp-number-of-tests      };
-    Assertions: #{ $bootcamp-number-of-assertions };
-    Failures:   #{ $bootcamp-number-of-failed     };
-    Skipped:    #{ $bootcamp-number-of-skipped    };
+    Success: $bc-failed == 0;
+    Stats:   #{ $bc-stats   };
+    Tests:   #{ $bc-total   };
+    Asserts: #{ $bc-asserts };
+    Passed:  #{ $bc-passed  };
+    Failed:  #{ $bc-failed  };
+    Skipped: #{ $bc-skipped };
 
-    @if $bootcamp-errors != () and $bootcamp-setting-warnings {
-      @each $error in $bootcamp-errors {
+    @if $bc-errors != () and $bc-setting-warnings {
+      @each $error in $bc-errors {
         Error: #{$error};
       }
     }

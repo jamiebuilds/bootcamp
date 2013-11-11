@@ -1,6 +1,6 @@
 @function should($be, $something, $when) {
-  $bootcamp-should-b-text: $be;
-  $bootcamp-should-b-value: $something;
+  $bc-expect: $something;
+  $bc-expect-text: $be;
 
   @return $when;
 }

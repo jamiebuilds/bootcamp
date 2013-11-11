@@ -1,4 +1,4 @@
-@function bootcamp-util-power($x, $n) {
+@function bc-util-power($x, $n) {
   $ret: 1;
 
   @if $n >= 0 {
