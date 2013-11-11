@@ -1,9 +1,9 @@
-@mixin xdescribe($bootcamp-canceled) {
-  $bootcamp-skipping: true;
+@mixin xdescribe($statement) {
+  $bc-skipping: true;
 
-  @include describe($bootcamp-canceled) {
+  @include describe($statement) {
     @content;
   }
 
-  $bootcamp-skipping: false;
+  $bc-skipping: false;
 }

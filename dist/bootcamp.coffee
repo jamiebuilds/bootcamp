@@ -63,13 +63,14 @@ module.exports =
     # Get Properties
     ###
 
-    passed      = getProperty('Passed').indexOf('true') > -1
-    checklist   = getProperty 'Checklist'
-    tests       = getProperty 'Tests'
-    assertions  = getProperty 'Assertions'
-    failures    = getProperty 'Failures'
-    skipped     = getProperty 'Skipped'
-    errors      = getProperty 'Error', true
+    success = getProperty('Success').indexOf('true') > -1
+    stats   = getProperty 'Stats'
+    tests   = getProperty 'Tests'
+    asserts = getProperty 'Asserts'
+    passed  = getProperty 'Passed'
+    failed  = getProperty 'Failed'
+    skipped = getProperty 'Skipped'
+    errors  = getProperty 'Error', true
 
     ###
     # Return Any Errors
@@ -82,18 +83,19 @@ module.exports =
     ###
 
     return {
-      camp:       camp
-      results:    results
-      specs:      specs
+      camp:    camp
+      results: results
+      specs:   specs
 
-      passed:     passed
-      checklist:  checklist
-      stats:      "#{tests} Tests, #{assertions} assertions, #{failures} failures, #{skipped} skipped"
+      success: success
+      stats:   stats
+      details: "#{tests} Tests, #{asserts} assertions, #{failed} failures, #{skipped} skipped"
 
-      tests:      tests
-      assertions: assertions
-      failures:   failures
-      skipped:    skipped
+      tests:   tests
+      asserts: asserts
+      passed:  passed
+      failed:  failed
+      skipped: skipped
 
-      errors:     errors
+      errors:  errors
     }

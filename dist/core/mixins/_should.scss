@@ -1,46 +1,46 @@
-@mixin should($bootcamp-should-a, $bootcamp-should-b) {
-  @if $bootcamp-should-force-error {
-    $bootcamp-should-b: false;
+@mixin should($actual, $expect) {
+  @if $bc-error {
+    $expect: false;
   }
 
-  $bootcamp-number-of-assertions: $bootcamp-number-of-assertions + 1;
+  $bc-asserts: $bc-asserts + 1;
 
-  $bootcamp-should-a-value: bootcamp-util-stringify($bootcamp-should-a-value);
-  $bootcamp-should-b-value: bootcamp-util-stringify($bootcamp-should-b-value);
+  $bc-actual: bc-util-stringify($bc-actual);
+  $bc-expect: bc-util-stringify($bc-expect);
 
-  @if not $bootcamp-should-b {
-    $bootcamp-passing-assertions: false;
+  @if not $expect {
+    $bc-passing: false;
   }
 
-  @if not $bootcamp-should-b or $bootcamp-setting-verbose {
-    $_bootcamp-assertion-status: " ✗";
+  @if not $expect or $bc-setting-verbose {
+    $_bc-status: " ✗";
 
-    @if $bootcamp-passing-assertions {
-      $_bootcamp-assertion-status: " ✔";
+    @if $bc-passing {
+      $_bc-status: " ✔";
     }
 
-    @if $bootcamp-should-error {
-      #{$_bootcamp-assertion-status}:
-        #{$bootcamp-should-error}
-        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value}
-        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
+    @if $bc-error-text {
+      #{$_bc-status}:
+        #{$bc-error-text}
+        #{$bc-actual-text} #{$bc-actual}
+        #{$bc-expect-text} #{$bc-expect};
     } @else {
-      #{$_bootcamp-assertion-status}:
-        #{$bootcamp-should-a-text} #{$bootcamp-should-a-value}
-        #{$bootcamp-should-b-text} #{$bootcamp-should-b-value};
+      #{$_bc-status}:
+        #{$bc-actual-text} #{$bc-actual}
+        #{$bc-expect-text} #{$bc-expect};
     }
   }
 
-  @if $bootcamp-should-error {
-    @if not index($bootcamp-errors, $bootcamp-should-error) {
-      $bootcamp-errors: append($bootcamp-errors, $bootcamp-should-error);
+  @if $bc-error-text {
+    @if not index($bc-errors, $bc-error-text) {
+      $bc-errors: append($bc-errors, $bc-error-text);
     }
   }
 
-  $bootcamp-should-a-text:       null;
-  $bootcamp-should-b-text:       null;
-  $bootcamp-should-a-value:      null;
-  $bootcamp-should-b-value:      null;
-  $bootcamp-should-error:        null;
-  $bootcamp-should-force-error: false;
+  $bc-actual-text:       null;
+  $bc-expect-text:       null;
+  $bc-actual:      null;
+  $bc-expect:      null;
+  $bc-error-text:        null;
+  $bc-error: false;
 }

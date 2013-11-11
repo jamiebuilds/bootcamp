@@ -1,13 +1,13 @@
 @include describe("Power Util") {
   @include it("should expect positive values to be calculated correctly") {
-    @include should( expect( bootcamp-util-power( 10, 2) ), to( equal(  100 )));
-    @include should( expect( bootcamp-util-power(  2, 2) ), to( equal(    4 )));
-    @include should( expect( bootcamp-util-power(0.5, 2) ), to( equal( 0.25 )));
+    @include should( expect( bc-util-power( 10, 2) ), to( equal(  100 )));
+    @include should( expect( bc-util-power(  2, 2) ), to( equal(    4 )));
+    @include should( expect( bc-util-power(0.5, 2) ), to( equal( 0.25 )));
   }
 
   @include it("should expect negative values to be calculated correctly") {
-    @include should( expect( bootcamp-util-power( 10, -2) ), to( equal( 0.01 )));
-    @include should( expect( bootcamp-util-power(  2, -2) ), to( equal( 0.25 )));
-    @include should( expect( bootcamp-util-power(0.5, -2) ), to( equal(    4 )));
+    @include should( expect( bc-util-power( 10, -2) ), to( equal( 0.01 )));
+    @include should( expect( bc-util-power(  2, -2) ), to( equal( 0.25 )));
+    @include should( expect( bc-util-power(0.5, -2) ), to( equal(    4 )));
   }
 }

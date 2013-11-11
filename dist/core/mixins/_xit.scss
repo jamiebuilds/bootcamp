@@ -1,9 +1,9 @@
-@mixin xit($bootcamp-canceled) {
-  $bootcamp-skipping: true;
+@mixin xit($statement) {
+  $bc-skipping: true;
 
-  @include it($bootcamp-canceled) {
+  @include it($statement) {
     @content;
   }
 
-  $bootcamp-skipping: false;
+  $bc-skipping: false;
 }
