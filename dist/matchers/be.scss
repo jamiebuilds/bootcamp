@@ -1,3 +1,0 @@
-@function be($this) {
-  @return should("be", $this, actual() == $this);
-}

@@ -1,0 +1,29 @@
+@include describe("Be shorter than") {
+  @include it("should expect shorter lists to be shorter") {
+    @include should( expect( (1, 2, 3) ), to( be-shorter-than(4)));
+    @include should( expect( (1)       ), to( be-shorter-than(2)));
+    @include should( expect( ()        ), to( be-shorter-than(1)));
+  }
+
+  @include it("should expect longer lists not to be shorter") {
+    @include should( expect( (1, 2, 3) ), not-to( be-shorter-than( 2)));
+    @include should( expect( (1)       ), not-to( be-shorter-than( 0)));
+    @include should( expect( ()        ), not-to( be-shorter-than(-1)));
+  }
+
+  @include it("should expect equal length lists not to be shorter") {
+    @include should( expect( (1, 2, 3) ), not-to( be-shorter-than(3)));
+    @include should( expect( (1)       ), not-to( be-shorter-than(1)));
+    @include should( expect( ()        ), not-to( be-shorter-than(0)));
+  }
+
+  @include it("should expect other values to be shorter than 2") {
+    @include should( expect( null      ), to( be-shorter-than(2)));
+    @include should( expect( "string"  ), to( be-shorter-than(2)));
+  }
+
+  @include it("should expect other values to be shorter than 0") {
+    @include should( expect( null      ), not-to( be-shorter-than(0)));
+    @include should( expect( "string"  ), not-to( be-shorter-than(0)));
+  }
+}
