@@ -1,3 +1,6 @@
 [submodule "wiki"]
 	path = wiki
 	url = https://github.com/tctcl/bootcamp.wiki.git
+[submodule "bootcamp"]
+	path = bootcamp
+	url = https://github.com/tctcl/bootcamp.git
