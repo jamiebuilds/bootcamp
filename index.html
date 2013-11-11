@@ -26,16 +26,24 @@
     $(function() {
 
       routie('!/wiki/:name', function(name) {
-        ga('send', 'pageview', '/bootcamp/wiki/' + name);
         Flatdoc.run({
           fetcher: Flatdoc.file('wiki/' + name + '.md')
+        });
+
+        ga('send', 'pageview', {
+          'page'  : '/bootcamp/wiki/' + name,
+          'title' : 'Wiki · ' + name
         });
       });
 
       routie('*', function() {
-        ga('send', 'pageview', '/bootcamp/');
         Flatdoc.run({
           fetcher: Flatdoc.file('bootcamp/README.md')
+        });
+
+        ga('send', 'pageview', {
+          'page'  : '/bootcamp/',
+          'title' : 'Home'
         });
       });
 
