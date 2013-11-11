@@ -3,13 +3,13 @@ Bootcamp [![NPM version](https://badge.fury.io/js/bootcamp.png)](http://badge.fu
 
 Jasmine-style BDD testing written in Sass for Sass.
 
-#### [Read Introduction](https://github.com/tctcl/bootcamp/wiki/Introduction)
+###### [Read Introduction >](https://github.com/tctcl/bootcamp/wiki/introduction)
 
-#### [Read Setup](https://github.com/tctcl/bootcamp/wiki/Setup)
+###### [Read Setup >](https://github.com/tctcl/bootcamp/wiki/setup)
 
-#### [See Example Test Suite](https://github.com/tctcl/bootcamp/wiki/Example-Test-Suite)
+###### [See Example Test Suite >](https://github.com/tctcl/bootcamp/wiki/example-test-suite)
 
-#### [Authoring Matchers](https://github.com/tctcl/bootcamp/wiki/Authoring-Matchers)
+###### [Authoring Matchers >](https://github.com/tctcl/bootcamp/wiki/authoring-matchers)
 
 ## Install
 
@@ -49,4 +49,4 @@ This project is provided under the terms of the [MIT License](LICENSE.md).
 
 Authored by **James Kyle** · [Github](https://github.com/thejameskyle) · [Twitter](https://twitter.com/thejameskyle) · [CodePen](https://codepen.com/thejameskyle)
 
-[Built Equal](www.hrc.org/donate) · [Made in Boston](http://bostonbuilt.org/)
+[Built Equal >](www.hrc.org/donate) [Made in Boston >](http://bostonbuilt.org/)
