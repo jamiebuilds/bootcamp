@@ -49,8 +49,4 @@ This project is provided under the terms of the [MIT License](LICENSE.md).
 
 Authored by **James Kyle** · [Github](https://github.com/thejameskyle) · [Twitter](https://twitter.com/thejameskyle) · [CodePen](https://codepen.com/thejameskyle)
 
-<<<<<<< HEAD
-[Built Equal >](www.hrc.org/donate) [Made in Boston >](http://bostonbuilt.org/)
-=======
-[Built Equal >](www.hrc.org/donate) · [Made in Boston >](http://bostonbuilt.org/)
->>>>>>> 62249af... Make ghpages buttons
+[Built Equal >](http://www.hrc.org/donate) · [Made in Boston >](http://bostonbuilt.org/)
