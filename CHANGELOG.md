@@ -1,5 +1,21 @@
 # Changelog
 
+#### 1.0.0 - 2013-11-16
+
+- Add Matcher have-type-of
+- Adds Warnings/Errors
+- Adds leading underscores to scss files
+- Remove be-undefined()
+- Remove be-defined()
+- Add Stringify Util
+- Improve Statement output with stringify util
+- Add Contain Util
+- Add Equal Util
+- Switch meaning of be() and equal()
+- Clean up contain() and deep-contain() with contain util
+- Renames internal variables to make more sense
+- Refactor Grunt Task
+
 #### 0.0.5 - 2013-10-20
 
 - Better Test Output
