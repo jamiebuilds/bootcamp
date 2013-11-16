@@ -11,13 +11,15 @@
         @if $bc-setting-verbose {
           Test: Passed;
         }
-        $bc-stats: $bc-stats + " ✔";
+
+        $bc-stats: "#{$bc-stats} ✔";
         $bc-passed: $bc-passed + 1;
       }
 
       @else {
         Test: Failed;
-        $bc-stats: $bc-stats + " ✗";
+
+        $bc-stats: "#{$bc-stats} ✗";
         $bc-failed: $bc-failed + 1;
       }
     }
