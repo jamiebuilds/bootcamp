@@ -1,18 +1,17 @@
 @mixin describe($bc-describe-new) {
   @if not $bc-skipping {
-    $bc-describe-old: $bc-describe;
+    $bc-describe-old:   $bc-describe;
+    $bc-describe-depth: $bc-describe-depth + 1;
 
     @if $bc-describe-depth > 0 {
-      $bc-describe: $bc-describe-old + " " + $bc-describe-new;
+      $bc-describe: "#{$bc-describe-old} #{$bc-describe-new}";
     } @else {
-      $bc-describe: $bc-describe-new;
+      $bc-describe: "#{$bc-describe-new}";
     }
-
-    $bc-describe-depth: $bc-describe-depth + 1;
 
     @content;
 
-    $bc-describe: $bc-describe-old;
+    $bc-describe:       $bc-describe-old;
     $bc-describe-depth: $bc-describe-depth - 1;
   } @else {
     @content;
