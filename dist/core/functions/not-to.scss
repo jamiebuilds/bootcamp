@@ -1,4 +1,0 @@
-@function not-to($this) {
-  $bootcamp-should-b-text: "not to " + $bootcamp-should-b-text;
-  @return not $this;
-}

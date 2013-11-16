@@ -1,0 +1,41 @@
+@include describe("Contain Util") {
+  @include it("should return true for lists that contain a value") {
+    $list-1: 1, 2, 3;
+    $list-2: "foo", "bar", "baz";
+    $list-3: true, false, true;
+
+    @include should(expect( bc-util-contain( $list-1, 2     ) ), to( be( true )));
+    @include should(expect( bc-util-contain( $list-2, "bar" ) ), to( be( true )));
+    @include should(expect( bc-util-contain( $list-3, false ) ), to( be( true )));
+  }
+
+  @include it("should return false for lists that do not contain a value") {
+    $list-1: 1, 2, 3;
+    $list-2: "foo", "bar", "baz";
+    $list-3: true, false, true;
+
+    @include should(expect( bc-util-contain( $list-1, 4     ) ), to( be( false )));
+    @include should(expect( bc-util-contain( $list-2, "tah" ) ), to( be( false )));
+    @include should(expect( bc-util-contain( $list-3, null  ) ), to( be( false )));
+  }
+
+  @include it("should return true for lists that deep contain a value") {
+    $list-1: 1, (2, 3);
+    $list-2: "foo", ("bar", "baz");
+    $list-3: true, (false, true);
+
+    @include should(expect( bc-util-contain( $list-1, 2,     $recursive: true ) ), to( be( true )));
+    @include should(expect( bc-util-contain( $list-2, "bar", $recursive: true ) ), to( be( true )));
+    @include should(expect( bc-util-contain( $list-3, false, $recursive: true ) ), to( be( true )));
+  }
+
+  @include it("should return false for lists that do not deep contain a value") {
+    $list-1: 1, (2, 3);
+    $list-2: "foo", ("bar", "baz");
+    $list-3: true, (false, true);
+
+    @include should(expect( bc-util-contain( $list-1, 4,     $recursive: true ) ), to( be( false )));
+    @include should(expect( bc-util-contain( $list-2, "tah", $recursive: true ) ), to( be( false )));
+    @include should(expect( bc-util-contain( $list-3, null,  $recursive: true ) ), to( be( false )));
+  }
+}

@@ -40,28 +40,37 @@ module.exports =
     # method: getProperty
     ###
 
-    getProperty = (property) ->
-      value = results.match( new RegExp property + ': ((.|\n)*?);' )
+    getProperty = (property, force) ->
+      values = results.match new RegExp property + ': ((.|\n)*?);', 'g'
+      property = []
 
-      unless value?
+      if force and !values? then return property
+
+      unless values?
         error = incomplete: true, error: "No #{property} Found"
         return false
       else
-        value = value[1].trim()
-        value = parseInt value unless isNaN value
+        for value in values
+          value = value.replace(/;/, '')
+          value = value.replace(/(.*:)/, '')
+          value = value.trim()
+          value = parseInt value unless isNaN value
+          property.push value
 
-      return value
+      return property
 
     ###
     # Get Properties
     ###
 
-    passed      = getProperty('Passed') == 'true'
-    checklist   = getProperty 'Checklist'
-    tests       = getProperty 'Tests'
-    assertions  = getProperty 'Assertions'
-    failures    = getProperty 'Failures'
-    skipped     = getProperty 'Skipped'
+    success = getProperty('Success').indexOf('true') > -1
+    stats   = getProperty 'Stats'
+    tests   = getProperty 'Tests'
+    asserts = getProperty 'Asserts'
+    passed  = getProperty 'Passed'
+    failed  = getProperty 'Failed'
+    skipped = getProperty 'Skipped'
+    errors  = getProperty 'Error', true
 
     ###
     # Return Any Errors
@@ -74,16 +83,19 @@ module.exports =
     ###
 
     return {
-      camp:       camp
-      results:    results
-      specs:      specs
+      camp:    camp
+      results: results
+      specs:   specs
 
-      passed:     passed
-      checklist:  checklist
-      stats:      "#{tests} Tests, #{assertions} assertions, #{failures} failures, #{skipped} skipped"
+      success: success
+      stats:   stats
+      details: "#{tests} Tests, #{asserts} assertions, #{failed} failures, #{skipped} skipped"
 
-      tests:      tests
-      assertions: assertions
-      failures:   failures
-      skipped:    skipped
+      tests:   tests
+      asserts: asserts
+      passed:  passed
+      failed:  failed
+      skipped: skipped
+
+      errors:  errors
     }

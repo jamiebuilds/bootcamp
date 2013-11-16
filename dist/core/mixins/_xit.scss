@@ -1,0 +1,9 @@
+@mixin xit($statement) {
+  $bc-skipping: true;
+
+  @include it($statement) {
+    @content;
+  }
+
+  $bc-skipping: false;
+}

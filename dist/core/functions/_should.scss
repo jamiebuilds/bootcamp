@@ -1,0 +1,6 @@
+@function should($be, $something, $when) {
+  $bc-expect: $something;
+  $bc-expect-text: $be;
+
+  @return $when;
+}

@@ -1,0 +1,31 @@
+@mixin it($statement) {
+  $bc-total: $bc-total + 1;
+
+  @if not $bc-skipping {
+    $bc-passing: true;
+
+    #{$bc-describe} #{$statement} {
+      @content;
+
+      @if $bc-passing {
+        @if $bc-setting-verbose {
+          Test: Passed;
+        }
+
+        $bc-stats: "#{$bc-stats} ✔";
+        $bc-passed: $bc-passed + 1;
+      }
+
+      @else {
+        Test: Failed;
+
+        $bc-stats: "#{$bc-stats} ✗";
+        $bc-failed: $bc-failed + 1;
+      }
+    }
+
+    $bc-passing: null;
+  } @else {
+    $bc-skipped: $bc-skipped + 1;
+  }
+}

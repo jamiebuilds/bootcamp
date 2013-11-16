@@ -1,0 +1,9 @@
+@mixin xdescribe($statement) {
+  $bc-skipping: true;
+
+  @include describe($statement) {
+    @content;
+  }
+
+  $bc-skipping: false;
+}
