@@ -3,7 +3,6 @@ node_js:
   - '0.8'
   - '0.10'
 env:
-  - SASS_VERSION=3.2.12
   - SASS_VERSION=3.3.0.rc.1
 before_script:
   - gem update --system
