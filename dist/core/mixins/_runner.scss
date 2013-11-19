@@ -5,7 +5,7 @@
 @mixin runner-end {
 
   @if $bc-total == 0 {
-    $bc-stats: "No tests were found";
+    $bc-stats: "No tests were found" !global;
   }
 
   Test Results {

@@ -14,16 +14,16 @@
   }
 
   @else if $type == "fatal" {
-    $bc-error: true;
+    $bc-error: true !global;
     $title: "FATAL ERROR";
   }
 
   @else {
-    $bc-error: true;
+    $bc-error: true !global;
     $title: "ERROR";
   }
 
-  $bc-error-text: "!" + $title + "! " + $message + ".";
+  $bc-error-text: "!#{$title}! #{$message}." !global;
 
   @return false;
 }
