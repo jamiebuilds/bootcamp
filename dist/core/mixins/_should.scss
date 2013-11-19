@@ -13,19 +13,19 @@
   }
 
   @if not $expect or $bc-setting-verbose {
-    $_bc-status: " ✗" !global;
+    $status: " ✗";
 
     @if $bc-passing {
-      $_bc-status: " ✔" !global;
+      $status: " ✔";
     }
 
     @if $bc-error-text {
-      #{$_bc-status}:
+      #{$status}:
         #{$bc-error-text}
         #{$bc-actual-text} #{$bc-actual}
         #{$bc-expect-text} #{$bc-expect};
     } @else {
-      #{$_bc-status}:
+      #{$status}:
         #{$bc-actual-text} #{$bc-actual}
         #{$bc-expect-text} #{$bc-expect};
     }
