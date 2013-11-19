@@ -1,9 +1,9 @@
 @mixin xit($statement) {
-  $bc-skipping: true;
+  $bc-skipping: true !global;
 
   @include it($statement) {
     @content;
   }
 
-  $bc-skipping: false;
+  $bc-skipping: false !global;
 }
