@@ -23,7 +23,7 @@
     $title: "ERROR";
   }
 
-  $bc-error-text: "!" + $title + "! " + $message + "." !global;
+  $bc-error-text: "!#{$title}! #{$message}." !global;
 
   @return false;
 }
