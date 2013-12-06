@@ -1,46 +1,29 @@
 @mixin describe($bc-describe-new) {
   @if not $bc-skipping {
-
-    $bc-describe-old:() !global !default;
-    $bc-describe-old:append($bc-describe-old,$bc-describe-new) !global;
+    $bc-describe-old: $bc-describe !global !default;
+    $bc-describe-old: append($bc-describe-old,$bc-describe-new) !global;
 
     @if $bc-describe-depth > 0 {
-      $bc-describe:"" !global;
-      @for $i from 1 through length($bc-describe-old) {
-        $bc-describe:$bc-describe +" "+ nth($bc-describe-old,$i) !global;
-      }
-
+      $bc-describe: bc-util-arrayJoin($bc-describe-old," ",2) !global;
     } @else {
       $bc-describe: "#{$bc-describe-new}" !global;
     }
 
     $bc-describe-depth: $bc-describe-depth + 1 !global;
 
-
     @content;
 
-    $bc-describe:"" !global;
+    $bc-describe: "" !global;
+    $_tmp: ();
+    @for $i from 1 through $bc-describe-depth {
+      $_tmp: append($_tmp, nth($bc-describe-old, $i));
+    }
+    $bc-describe-old: $_tmp !global;
+    $bc-describe: nth($bc-describe-old,1) !global;
     $bc-describe-depth: $bc-describe-depth - 1 !global;
 
-    @if $bc-describe-depth > 0{
-
-
-      $bc-describe-old-tmp:() !global;
-      @for $i from 1 through $bc-describe-depth {
-        $bc-describe-old-tmp:append($bc-describe-old-tmp,nth($bc-describe-old,$i)) !global;
-      }
-      $bc-describe-old:$bc-describe-old-tmp !global;
-
-      @for $i from 1 through length($bc-describe-old) {
-        $bc-describe:$bc-describe +" "+ nth($bc-describe-old,$i) !global;
-      }
-
-
-    }
-    @else{
-      $bc-describe-old:() !global;
-    }
   } @else {
     @content;
   }
 }
+
