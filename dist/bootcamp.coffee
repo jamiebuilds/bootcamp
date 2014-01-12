@@ -12,7 +12,7 @@ module.exports =
     # Get Camp
     ###
 
-    camp = file.match /\/\* >> Bootcamp >> \*\/((.|\n)*)\/\* << Bootcamp << \*\//
+    camp = file.match /\/\* >> Bootcamp >> \*\/((.|\n|\r)*)\/\* << Bootcamp << \*\//
 
     unless camp?
       return incomplete: true, error: 'No Test Suite Found'
@@ -23,7 +23,7 @@ module.exports =
     # Get Results
     ###
 
-    results = camp.match /Test Results \{((.|\n)*)\}/
+    results = camp.match /Test Results \{((.|\n|\r)*)\}/
 
     unless results?
       return incomplete: true, error: 'No Test Results Found'
@@ -41,7 +41,7 @@ module.exports =
     ###
 
     getProperty = (property, force) ->
-      values = results.match new RegExp property + ': ((.|\n)*?);', 'g'
+      values = results.match new RegExp property + ': ((.|\n|\r)*?);', 'g'
       property = []
 
       if force and !values? then return property
