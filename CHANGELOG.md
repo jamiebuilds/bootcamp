@@ -1,5 +1,12 @@
 # Changelog
 
+#### 1.1.2 - 2014-1-12
+
+- Fix nested describe naming
+- Add bc-util-list-join utility
+- Fix newline regex on windows
+- Update grunt-contrib-sass
+
 #### 1.1.0 - 2013-11-19
 
 - Sass 3.3 (breaking change)
