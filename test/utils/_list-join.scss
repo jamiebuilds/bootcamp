@@ -1,0 +1,39 @@
+@include describe("List Join Util") {
+  @include it("should join an list") {
+    $list-1: 1, 2, 3;
+    $list-2: "foo", "bar", "baz";
+    $list-3: true, false, true;
+
+    @include should(expect( bc-util-list-join($list-1, " ") ), to( be( "1 2 3" )));
+    @include should(expect( bc-util-list-join($list-2, " ") ), to( be( "foo bar baz" )));
+    @include should(expect( bc-util-list-join($list-3, " ") ), to( be( "true false true" )));
+  }
+
+  @include it("should work with any seperator") {
+    $list: 1, 2, 3;
+
+    @include should(expect( bc-util-list-join($list, "-") ), to( be( "1-2-3" )));
+    @include should(expect( bc-util-list-join($list, true) ), to( be( "1true2true3" )));
+  }
+
+  @include it("should slice a list at start point") {
+    $list: 1, 2, 3, 4, 5;
+
+    @include should(expect( bc-util-list-join($list, " ", $slice-start: 3) ), to( be( "3 4 5" )));
+    @include should(expect( bc-util-list-join($list, " ", $slice-start: 2) ), to( be( "2 3 4 5" )));
+  }
+
+  @include it("should slice a list at the end point") {
+    $list: 1, 2, 3, 4, 5;
+
+    @include should(expect( bc-util-list-join($list, " ", $slice-end: 2) ), to( be( "1 2 3" )));
+    @include should(expect( bc-util-list-join($list, " ", $slice-end: 3) ), to( be( "1 2" )));
+  }
+
+  @include it("should slice a list at start and end points") {
+    $list: 1, 2, 3, 4, 5;
+
+    @include should(expect( bc-util-list-join($list, " ", $slice-start: 2, $slice-end: 2) ), to( be( "2 3" )));
+    @include should(expect( bc-util-list-join($list, " ", $slice-start: 3, $slice-end: 1) ), to( be( "3 4" )));
+  }
+}
