@@ -11,11 +11,12 @@
     "gruntplugin",
     "bower"
   ],
-  "homepage": "https://github.com/tctcl/bootcamp",
-  "bugs": "https://github.com/tctcl/bootcamp/issues",
+  "homepage": "https://github.com/thejameskyle/bootcamp",
+  "bugs": "https://github.com/thejameskyle/bootcamp/issues",
   "author": {
-    "name": "Tactical",
-    "url": "https://github.com/tctcl"
+    "name": "James Kyle",
+    "email": "me@thejameskyle.com",
+    "url": "https://github.com/thejameskyle"
   },
   "contributors": [
     {
@@ -27,7 +28,7 @@
   "main": "dist/bootcamp.coffee",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tctcl/bootcamp.git"
+    "url": "git://github.com/thejameskyle/bootcamp.git"
   },
   "scripts": {
     "test": "grunt test"
@@ -57,7 +58,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/tctcl/bootcamp/blob/master/LICENSE.md"
+      "url": "https://github.com/thejameskyle/bootcamp/blob/master/LICENSE.md"
     }
   ]
 }

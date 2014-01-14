@@ -1,7 +1,7 @@
 {
   "name": "bootcamp",
   "version": "1.1.2",
-  "homepage": "http://github.com/tctcl/bootcamp",
+  "homepage": "http://github.com/thejameskyle/bootcamp",
   "main": "dist/bootcamp.scss",
   "ignore": [
     "test",
