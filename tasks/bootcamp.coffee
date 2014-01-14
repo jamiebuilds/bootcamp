@@ -55,7 +55,7 @@ module.exports = (grunt) ->
 
       isEmpty: ->
         @logStats()
-        @warn 'Your tests probably haven\'t been properly set up.\nTake a look at https://github.com/tctcl/bootcamp/wiki/setup'
+        @warn 'Your tests probably haven\'t been properly set up.\nTake a look at https://github.com/thejameskyle/bootcamp/wiki/setup'
         return true
 
       hasFailed: ->
