@@ -1,3 +1,5 @@
-@function be-longer-than($this) {
-  @return should("be longer than", $this, length(actual()) > $this);
+@function bootcamp-matcher-be-longer-than($a, $b) {
+  @return length($a) > $b;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-be-longer-than", "be-longer-than");

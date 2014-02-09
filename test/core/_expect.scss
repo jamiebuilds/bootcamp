@@ -1,0 +1,5 @@
+@include describe("Expect") {
+  @include it("should run a test") {
+    @include expect(true to be true);
+  }
+}

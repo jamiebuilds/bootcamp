@@ -1,0 +1,11 @@
+$bc-data-options  : null;
+$bc-data-tests    : null;
+$bc-data-results  : null;
+$bc-data-warnings : null;
+
+@mixin bc-data-reset {
+  $bc-data-options  : () !global;
+  $bc-data-tests    : ( depth: 0, parents: (), current: null, result: () ) !global;
+  $bc-data-results  : () !global;
+  $bc-data-warnings : () !global;
+}

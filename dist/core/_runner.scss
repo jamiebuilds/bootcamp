@@ -1,0 +1,12 @@
+@mixin bootcamp-runner($options: null) {
+  @include bc-data-reset();
+
+  /* Bootcamp
+   *
+   * Options:
+   * - Verbose
+   * - Warnings
+   *
+   * Tests:
+   */
+}

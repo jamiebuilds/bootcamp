@@ -1,3 +1,11 @@
-@function contain($value) {
-  @return should("deep contain", $value, bc-util-contain( actual(), $value ));
+@function bootcamp-matcher-contain($a, $b) {
+  @each $item in $a {
+    @if $item == $b {
+      @return true;
+    }
+  }
+
+  @return false;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-contain", "contain");

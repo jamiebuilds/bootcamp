@@ -1,0 +1,27 @@
+@mixin expect($expression, $arguments...) {
+  $bc-data-tests: bc-tree-branch($bc-data-tests) !global;
+
+  $result: false;
+  $length: length($expression);
+
+  @if $length == 4 {
+    $result: call( map-get($bc-registered-matchers, nth($expression, 3)), nth($expression, 1), nth($expression, 4), $arguments...);
+  }
+
+  @if $length == 3 {
+    $result: call( map-get($bc-registered-matchers, nth($expression, 3)), nth($expression, 1), $arguments...);
+  }
+
+  @if nth($expression, 2) == "not-to" {
+    $result: not $result;
+  }
+
+  $bc-data-tests: bc-tree-current($bc-data-tests, (
+    expression: $expression,
+    passed: $result
+  )) !global;
+
+  Expected: $expression;
+
+  $bc-data-tests: bc-tree-merge($bc-data-tests, "assertions") !global;
+}

@@ -1,3 +1,17 @@
-@function deep-contain($value) {
-  @return should("deep contain", $value, bc-util-contain( actual(), $value, $recursive: true ));
+@function bootcamp-matcher-deep-contain($a, $b) {
+  @each $item in $a {
+    @if type-of( $item ) == list {
+      @if bootcamp-matcher-deep-contain($item, $b) {
+        @return true;
+      }
+    }
+
+    @if $item == $b {
+      @return true;
+    }
+  }
+
+  @return false;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-deep-contain", "deep-contain");

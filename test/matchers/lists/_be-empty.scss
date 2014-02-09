@@ -1,12 +1,12 @@
 @include describe("Be empty") {
   @include it("should expect lists without content to be empty") {
-    @include should( expect( () ), to( be-empty()));
+    @include expect( () to be-empty );
   }
 
   @include it("should expect lists with content to not be empty") {
-    @include should( expect( 1         ), not-to( be-empty()));
-    @include should( expect( (1, 2, 3) ), not-to( be-empty()));
-    @include should( expect( null      ), not-to( be-empty()));
-    @include should( expect( "string"  ), not-to( be-empty()));
+    @include expect( 1         not-to be-empty );
+    @include expect( (1, 2, 3) not-to be-empty );
+    @include expect( null      not-to be-empty );
+    @include expect( "string"  not-to be-empty );
   }
 }

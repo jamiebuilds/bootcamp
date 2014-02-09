@@ -1,27 +1,10 @@
 @import "bootcamp";
 
-$bc-setting-verbose:  false;
-$bc-setting-warnings: false;
+@include bootcamp-runner;
 
-@include runner-start;
-
-@import "core/mixins/describe";
-@import "core/mixins/it";
-@import "core/mixins/should";
-@import "core/mixins/xdescribe";
-@import "core/mixins/xit";
-
-@import "core/functions/actual";
-@import "core/functions/expect";
-@import "core/functions/not-to";
-@import "core/functions/should";
-@import "core/functions/to";
-
-@import "utils/contain";
-@import "utils/equal";
-@import "utils/list-join";
-@import "utils/power";
-@import "utils/stringify";
+@import "core/describe";
+@import "core/expect";
+@import "core/it";
 
 @import "matchers/be";
 @import "matchers/equal";
@@ -31,7 +14,6 @@ $bc-setting-warnings: false;
 @import "matchers/lists/be-shorter-than";
 @import "matchers/lists/contain";
 @import "matchers/lists/deep-contain";
-@import "matchers/lists/deep-equal";
 @import "matchers/lists/have-length-of";
 
 @import "matchers/numbers/be-close-to";
@@ -43,4 +25,4 @@ $bc-setting-warnings: false;
 @import "matchers/types/be-truthy";
 @import "matchers/types/have-type-of";
 
-@include runner-end;
+@include bootcamp-results;

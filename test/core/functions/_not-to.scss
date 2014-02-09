@@ -1,5 +1,0 @@
-@include describe("Not to") {
-  @include it("should expect not to do something simple") {
-    @include should(expect(1), not-to(be(2)));
-  }
-}

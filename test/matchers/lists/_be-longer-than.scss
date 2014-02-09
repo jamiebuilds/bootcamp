@@ -1,29 +1,29 @@
 @include describe("Be longer than") {
   @include it("should expect longer lists to be longer") {
-    @include should( expect( (1, 2, 3) ), to( be-longer-than( 2)));
-    @include should( expect( (1)       ), to( be-longer-than( 0)));
-    @include should( expect( ()        ), to( be-longer-than(-1)));
+    @include expect( (1, 2, 3) to be-longer-than  2 );
+    @include expect( (1)       to be-longer-than  0 );
+    @include expect( ()        to be-longer-than -1 );
   }
 
   @include it("should expect shorter lists not to be longer") {
-    @include should( expect( (1, 2, 3) ), not-to( be-longer-than(4)));
-    @include should( expect( (1)       ), not-to( be-longer-than(2)));
-    @include should( expect( ()        ), not-to( be-longer-than(1)));
+    @include expect( (1, 2, 3) not-to be-longer-than 4 );
+    @include expect( (1)       not-to be-longer-than 2 );
+    @include expect( ()        not-to be-longer-than 1 );
   }
 
   @include it("should expect equal length lists not to be longer") {
-    @include should( expect( (1, 2, 3) ), not-to( be-longer-than(3)));
-    @include should( expect( (1)       ), not-to( be-longer-than(1)));
-    @include should( expect( ()        ), not-to( be-longer-than(0)));
+    @include expect( (1, 2, 3) not-to be-longer-than 3 );
+    @include expect( (1)       not-to be-longer-than 1 );
+    @include expect( ()        not-to be-longer-than 0 );
   }
 
   @include it("should expect other values to be longer than 0") {
-    @include should( expect( null      ), to( be-longer-than(0)));
-    @include should( expect( "string"  ), to( be-longer-than(0)));
+    @include expect( null      to be-longer-than 0 );
+    @include expect( "string"  to be-longer-than 0 );
   }
 
   @include it("should expect other values to be shorter than 1") {
-    @include should( expect( null      ), not-to( be-longer-than(1)));
-    @include should( expect( "string"  ), not-to( be-longer-than(1)));
+    @include expect( null      not-to be-longer-than 1 );
+    @include expect( "string"  not-to be-longer-than 1 );
   }
 }

@@ -1,3 +1,5 @@
-@function be-empty() {
-  @return should("be", "empty", actual() == ());
+@function bootcamp-matcher-be-empty($a) {
+  @return $a == ();
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-be-empty", "be-empty");

@@ -1,0 +1,12 @@
+@mixin bootcamp-results {
+  __BOOTCAMP_DATA__ {
+    content: json-encode( (
+      options  : $bc-data-options,
+      tests    : map-get($bc-data-tests, result),
+      results  : $bc-data-results,
+      warnings : $bc-data-warnings
+    ) )
+  }
+
+  @include bc-data-reset();
+}

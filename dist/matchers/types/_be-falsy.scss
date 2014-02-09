@@ -1,3 +1,5 @@
-@function be-falsy() {
-  @return should("be", "falsy", not actual());
+@function bootcamp-matcher-be-falsy($a) {
+  @return not $a;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-be-falsy", "be-falsy");

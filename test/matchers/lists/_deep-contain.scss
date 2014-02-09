@@ -5,10 +5,10 @@
     $list-3: 100, (0.2, 12);
     $list-4: false, (null, false);
 
-    @include should( expect( $list-1 ), to( deep-contain( true  )));
-    @include should( expect( $list-2 ), to( deep-contain( "bar" )));
-    @include should( expect( $list-3 ), to( deep-contain( 0.2   )));
-    @include should( expect( $list-4 ), to( deep-contain( null  )));
+    @include expect( $list-1 to deep-contain true  );
+    @include expect( $list-2 to deep-contain "bar" );
+    @include expect( $list-3 to deep-contain 0.2   );
+    @include expect( $list-4 to deep-contain null  );
   }
 
   @include it("should expect deep list without value not to contain") {
@@ -17,10 +17,10 @@
     $list-3: 100, (0.2, 12);
     $list-4: false, (null, false);
 
-    @include should( expect( $list-1 ), not-to( deep-contain( false )));
-    @include should( expect( $list-2 ), not-to( deep-contain( "fiz" )));
-    @include should( expect( $list-3 ), not-to( deep-contain( 300   )));
-    @include should( expect( $list-4 ), not-to( deep-contain( "sod" )));
+    @include expect( $list-1 not-to deep-contain false );
+    @include expect( $list-2 not-to deep-contain "fiz" );
+    @include expect( $list-3 not-to deep-contain 300   );
+    @include expect( $list-4 not-to deep-contain "sod" );
   }
 
   @include it("should expect non-deep list with value to contain") {
@@ -29,23 +29,23 @@
     $list-3: 100, 0.2, 12;
     $list-4: false, null, false;
 
-    @include should( expect( $list-1 ), to( deep-contain( true  )));
-    @include should( expect( $list-2 ), to( deep-contain( "bar" )));
-    @include should( expect( $list-3 ), to( deep-contain( 0.2   )));
-    @include should( expect( $list-4 ), to( deep-contain( null  )));
+    @include expect( $list-1 to deep-contain true  );
+    @include expect( $list-2 to deep-contain "bar" );
+    @include expect( $list-3 to deep-contain 0.2   );
+    @include expect( $list-4 to deep-contain null  );
   }
 
   @include it("should expect item with value to contain") {
-    @include should( expect( true  ), to( deep-contain( true  )));
-    @include should( expect( "bar" ), to( deep-contain( "bar" )));
-    @include should( expect( 100   ), to( deep-contain( 100   )));
-    @include should( expect( null  ), to( deep-contain( null  )));
+    @include expect( true  to deep-contain true  );
+    @include expect( "bar" to deep-contain "bar" );
+    @include expect( 100   to deep-contain 100   );
+    @include expect( null  to deep-contain null  );
   }
 
   @include it("should expect item without value not to contain") {
-    @include should( expect( true  ), not-to( deep-contain( false )));
-    @include should( expect( "foo" ), not-to( deep-contain( "fiz" )));
-    @include should( expect( 200   ), not-to( deep-contain( 300   )));
-    @include should( expect( null  ), not-to( deep-contain( "sod" )));
+    @include expect( true  not-to deep-contain false );
+    @include expect( "foo" not-to deep-contain "fiz" );
+    @include expect( 200   not-to deep-contain 300   );
+    @include expect( null  not-to deep-contain "sod" );
   }
 }

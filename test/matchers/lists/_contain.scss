@@ -1,39 +1,39 @@
 @include describe("Contain") {
   @include it("should expect list with value to contain") {
-    $list-1: true, true, true;
-    $list-2: "foo", "bar", "baz";
-    $list-3: 100, 0.2, 12;
-    $list-4: false, null, false;
+    $list-1: (true, true, true);
+    $list-2: ("foo", "bar", "baz");
+    $list-3: (100, 0.2, 12);
+    $list-4: (false, null, false);
 
-    @include should( expect( $list-1 ), to( contain( true  )));
-    @include should( expect( $list-2 ), to( contain( "bar" )));
-    @include should( expect( $list-3 ), to( contain( 100   )));
-    @include should( expect( $list-4 ), to( contain( null  )));
+    @include expect( $list-1 to contain true  );
+    @include expect( $list-2 to contain "bar" );
+    @include expect( $list-3 to contain 100   );
+    @include expect( $list-4 to contain null  );
   }
 
   @include it("should expect list without value not to contain") {
-    $list-1: true, true, true;
-    $list-2: "foo", "bar", "baz";
-    $list-3: 100, 0.2, 12;
-    $list-4: false, null, false;
+    $list-1: (true, true, true);
+    $list-2: ("foo", "bar", "baz");
+    $list-3: (100, 0.2, 12);
+    $list-4: (false, null, false);
 
-    @include should( expect( $list-1 ), not-to( contain( false )));
-    @include should( expect( $list-2 ), not-to( contain( "fiz" )));
-    @include should( expect( $list-3 ), not-to( contain( 300   )));
-    @include should( expect( $list-4 ), not-to( contain( "sod" )));
+    @include expect( $list-1 not-to contain false );
+    @include expect( $list-2 not-to contain "fiz" );
+    @include expect( $list-3 not-to contain 300   );
+    @include expect( $list-4 not-to contain "sod" );
   }
 
   @include it("should expect item with value to contain") {
-    @include should( expect( true  ), to( contain( true  )));
-    @include should( expect( "bar" ), to( contain( "bar" )));
-    @include should( expect( 100   ), to( contain( 100   )));
-    @include should( expect( null  ), to( contain( null  )));
+    @include expect( true  to contain true  );
+    @include expect( "bar" to contain "bar" );
+    @include expect( 100   to contain 100   );
+    @include expect( null  to contain null  );
   }
 
   @include it("should expect item without value not to contain") {
-    @include should( expect( true  ), not-to( contain( false )));
-    @include should( expect( "foo" ), not-to( contain( "fiz" )));
-    @include should( expect( 200   ), not-to( contain( 300   )));
-    @include should( expect( null  ), not-to( contain( "sod" )));
+    @include expect( true  not-to contain false );
+    @include expect( "foo" not-to contain "fiz" );
+    @include expect( 200   not-to contain 300   );
+    @include expect( null  not-to contain "sod" );
   }
 }

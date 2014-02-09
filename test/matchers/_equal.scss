@@ -1,33 +1,33 @@
 @include describe("Equal") {
   @include it("should expect two equal values to be equal") {
-    @include should( expect(  1    ), to( equal(  1    )));
-    @include should( expect( -1    ), to( equal( -1    )));
-    @include should( expect( a     ), to( equal( a     )));
-    @include should( expect( false ), to( equal( false )));
+    @include expect( 1     to equal  1    );
+    @include expect( -1    to equal -1    );
+    @include expect( a     to equal a     );
+    @include expect( false to equal false );
   }
 
   @include it("should expect two non-equal values not to be equal") {
-    @include should( expect(  1    ), not-to( equal( 2    )));
-    @include should( expect( -1    ), not-to( equal( 1    )));
-    @include should( expect( a     ), not-to( equal( b    )));
-    @include should( expect( false ), not-to( equal( true )));
+    @include expect( 1     not-to equal 2    );
+    @include expect( -1    not-to equal 1    );
+    @include expect( a     not-to equal b    );
+    @include expect( false not-to equal true );
   }
 
   @include it("should expect two equal lists to be equal") {
-    @include should(expect( (1, 2, 3) ),           to( equal( (1, 2, 3) )));
-    @include should(expect( ("a", "b", "c") ),     to( equal( ("a", "b", "c") )));
-    @include should(expect( (true, false, true) ), to( equal( (true, false, true) )));
+    @include expect( (1, 2, 3)           to equal (1, 2, 3) );
+    @include expect( ("a", "b", "c")     to equal ("a", "b", "c") );
+    @include expect( (true, false, true) to equal (true, false, true) );
   }
 
   @include it("should expect two unequal lists not to be equal") {
-    @include should(expect( (3, 2, 1) ),            not-to( equal( (1, 2, 3) )));
-    @include should(expect( ("c", "b", "a") ),      not-to( equal( ("a", "b", "c") )));
-    @include should(expect( (false, true, false) ), not-to( equal( (true, false, true) )));
+    @include expect( (3, 2, 1)            not-to equal (1, 2, 3) );
+    @include expect( ("c", "b", "a")      not-to equal ("a", "b", "c") );
+    @include expect( (false, true, false) not-to equal (true, false, true) );
   }
 
   @include it("should expect two equal lists with different seperators not to be equal") {
-    @include should(expect( 1 2 3 ),           not-to( equal( (1, 2, 3) )));
-    @include should(expect( "a" "b" "c" ),     not-to( equal( ("a", "b", "c") )));
-    @include should(expect( true false true ), not-to( equal( (true, false, true) )));
+    @include expect( (1 2 3)           not-to equal (1, 2, 3) );
+    @include expect( ("a" "b" "c")     not-to equal ("a", "b", "c") );
+    @include expect( (true false true) not-to equal (true, false, true) );
   }
 }
