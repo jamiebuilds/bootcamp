@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.1.4 - 2014-2-24
+
+- Updated npm dependencies
+
 #### 1.1.2 - 2014-1-12
 
 - Fix nested describe naming
