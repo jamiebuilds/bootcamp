@@ -42,14 +42,14 @@
     "colors": "~0.6.2"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-init": "~0.2.1",
-    "grunt-contrib-sass": "~0.6.0",
+    "grunt": "~0.4.2",
+    "grunt-init": "~0.3.1",
+    "grunt-contrib-sass": "~0.7.2",
     "grunt-contrib-watch": "~0.5.3"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-sass": "~0.6.0"
+    "grunt": "~0.4.2",
+    "grunt-contrib-sass": "~0.7.2"
   },
   "engines": {
     "node": ">=0.8.0",
