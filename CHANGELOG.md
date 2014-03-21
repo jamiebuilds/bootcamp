@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.1.5 - 2014-3-21
+
+- Grunt: Fail instead of warn
+
 #### 1.1.4 - 2014-2-24
 
 - Updated npm dependencies
