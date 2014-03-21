@@ -61,7 +61,7 @@ module.exports = (grunt) ->
       hasFailed: ->
         @logSpecs()
         @logStats()
-        @warn @tests.details
+        @fail @tests.details
         @logErrors()
         return false
 
