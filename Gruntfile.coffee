@@ -15,7 +15,7 @@ module.exports = (grunt) ->
     sass: test:
       options:
         style: 'expanded'
-        loadPath: './dist'
+        loadPath: ['./dist', './node_modules']
       files: './test/results.css' : './test/specs.scss'
 
     # Bootcamp

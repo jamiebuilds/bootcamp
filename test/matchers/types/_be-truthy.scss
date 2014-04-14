@@ -1,13 +1,13 @@
 @include describe("Be Undefined") {
   @include it("should expect truthy values to be truthy") {
-    @include should( expect( true ), to( be-truthy()));
-    @include should( expect( 0    ), to( be-truthy()));
-    @include should( expect( 1    ), to( be-truthy()));
-    @include should( expect( ""   ), to( be-truthy()));
+    @include expect( true to be-truthy );
+    @include expect( 0    to be-truthy );
+    @include expect( 1    to be-truthy );
+    @include expect( ""   to be-truthy );
   }
 
   @include it("should expect falsy values not to be truthy") {
-    @include should( expect( false ), not-to( be-truthy()));
-    @include should( expect( null  ), not-to( be-truthy()));
+    @include expect( false not-to be-truthy );
+    @include expect( null  not-to be-truthy );
   }
 }

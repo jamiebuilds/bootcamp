@@ -1,12 +1,9 @@
-@function be-less-than($this) {
-  $actual: actual();
-  $when: false;
-
-  @if type-of($actual) == "number" {
-    $when: $actual < $this;
-  } @else {
-    $when: error("type", "The `be-less-than` matcher is only for numbers");
+@function bootcamp-matcher-be-less-than($a, $b) {
+  @if type-of($a) != "number" or type-of($b) != "number" {
+    @return false;
   }
 
-  @return should("be less than", $this, $when);
+  @return $a < $b;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-be-less-than", "be-less-than");

@@ -1,0 +1,5 @@
+$bc-registered-matchers: ();
+
+@mixin bootcamp-register-matcher($function, $matcher) {
+  $bc-registered-matchers: map-merge($bc-registered-matchers, ($matcher: $function)) !global;
+}

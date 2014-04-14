@@ -1,0 +1,73 @@
+@function bc-tree-branch($data) {
+  $depth   : map-get( $data, depth   );
+  $parents : map-get( $data, parents );
+  $current : map-get( $data, current );
+  $result  : map-get( $data, result  );
+
+  $depth: $depth + 1;
+
+  @if $depth > 1 {
+    $parents: append($parents, $current);
+  }
+
+  $current: ();
+
+  @return ( depth: $depth, parents: $parents, current: $current, result: $result );
+};
+
+@function bc-tree-merge($data, $name) {
+  $depth   : map-get( $data, depth   );
+  $parents : map-get( $data, parents );
+  $current : map-get( $data, current );
+  $result  : map-get( $data, result  );
+
+  @if $depth > 1 {
+    $length: length($parents);
+    $index: 1;
+
+    $next: ();
+
+    @each $parent in $parents {
+      @if $index == $length {
+        $prev: map-get($parent, $name);
+
+        @if $prev == null {
+          $prev: ();
+        }
+
+        $parent: map-merge($parent, ( $name: append($prev, $current) ));
+        $current: $parent;
+      }
+
+      @else {
+        $next: append($next, $parent);
+      }
+
+      $index: $index + 1;
+    }
+
+    $parents: $next;
+  }
+
+  @else {
+    $prev: map-get($result, $name);
+
+    @if $prev == null {
+      $prev: ();
+    }
+
+    $result: map-merge($result, ($name: append($prev, $current)) );
+    $current: ();
+    $parents: ();
+  }
+
+  $depth: $depth - 1;
+
+  @return ( depth: $depth, parents: $parents, current: $current, result: $result );
+};
+
+@function bc-tree-current ($data, $current) {
+  @return map-merge($data, (
+    current: map-merge( map-get($data, current), $current )
+  ));
+}

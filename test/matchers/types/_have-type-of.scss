@@ -1,17 +1,17 @@
 @include describe("Be Type") {
   @include it("should expect to have type of") {
-    @include should( expect( 1      ), to( have-type-of("number") ));
-    @include should( expect( true   ), to( have-type-of("bool")   ));
-    @include should( expect( (1, 2) ), to( have-type-of("list")   ));
-    @include should( expect( "foo"  ), to( have-type-of("string") ));
-    @include should( expect( #eee   ), to( have-type-of("color") ));
+    @include expect( 1      to have-type-of "number" );
+    @include expect( true   to have-type-of "bool"   );
+    @include expect( (1, 2) to have-type-of "list"   );
+    @include expect( "foo"  to have-type-of "string" );
+    @include expect( #eee   to have-type-of "color"  );
   }
 
   @include it("should expect not to have type of") {
-    @include should( expect( 1      ), not-to( have-type-of("bool")   ));
-    @include should( expect( true   ), not-to( have-type-of("list")   ));
-    @include should( expect( (1, 2) ), not-to( have-type-of("string") ));
-    @include should( expect( "foo"  ), not-to( have-type-of("color")  ));
-    @include should( expect( #eee   ), not-to( have-type-of("number") ));
+    @include expect( 1      not-to have-type-of "bool"   );
+    @include expect( true   not-to have-type-of "list"   );
+    @include expect( (1, 2) not-to have-type-of "string" );
+    @include expect( "foo"  not-to have-type-of "color"  );
+    @include expect( #eee   not-to have-type-of "number" );
   }
 }

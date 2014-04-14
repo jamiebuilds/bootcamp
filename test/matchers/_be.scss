@@ -1,50 +1,50 @@
 @include describe("be") {
   @include it("should expect to be something") {
-    @include should( expect( 1         ), to( be( 1         )));
-    @include should( expect( a         ), to( be( a         )));
-    @include should( expect( true      ), to( be( true      )));
-    @include should( expect( false     ), to( be( false     )));
-    @include should( expect( null      ), to( be( null      )));
+    @include expect( 1     to be 1     );
+    @include expect( a     to be a     );
+    @include expect( true  to be true  );
+    @include expect( false to be false );
+    @include expect( null  to be null  );
   }
 
   @include it("should expect not to be something") {
-    @include should( expect( 1         ), not-to( be( 2       )));
-    @include should( expect( a         ), not-to( be( b       )));
-    @include should( expect( true      ), not-to( be( false   )));
-    @include should( expect( false     ), not-to( be( true    )));
-    @include should( expect( null      ), not-to( be( valid   )));
+    @include expect( 1     not-to be 2     );
+    @include expect( a     not-to be b     );
+    @include expect( true  not-to be false );
+    @include expect( false not-to be true  );
+    @include expect( null  not-to be valid );
   }
 
   @include it("should expect two equal values to be equal") {
-    @include should( expect(  1    ), to( be(  1    )));
-    @include should( expect( -1    ), to( be( -1    )));
-    @include should( expect( a     ), to( be( a     )));
-    @include should( expect( false ), to( be( false )));
+    @include expect(  1    to be  1    );
+    @include expect( -1    to be -1    );
+    @include expect( a     to be a     );
+    @include expect( false to be false );
   }
 
   @include it("should expect two non-equal values not to be equal") {
-    @include should( expect(  1    ), not-to( be( 2    )));
-    @include should( expect( -1    ), not-to( be( 1    )));
-    @include should( expect( a     ), not-to( be( b    )));
-    @include should( expect( false ), not-to( be( true )));
+    @include expect(  1    not-to be 2    );
+    @include expect( -1    not-to be 1    );
+    @include expect( a     not-to be b    );
+    @include expect( false not-to be true );
   }
 
   @include it("should expect two equal lists to be equal") {
-    @include should(expect( (1, 2, 3) ),           to( be( (1, 2, 3) )));
-    @include should(expect( ("a", "b", "c") ),     to( be( ("a", "b", "c") )));
-    @include should(expect( (true, false, true) ), to( be( (true, false, true) )));
+    @include expect( (1, 2, 3)           to be (1, 2, 3) );
+    @include expect( ("a", "b", "c")     to be ("a", "b", "c") );
+    @include expect( (true, false, true) to be (true, false, true) );
   }
 
   @include it("should expect two unequal lists not to be equal") {
-    @include should(expect( (3, 2, 1) ),            not-to( be( (1, 2, 3) )));
-    @include should(expect( ("c", "b", "a") ),      not-to( be( ("a", "b", "c") )));
-    @include should(expect( (false, true, false) ), not-to( be( (true, false, true) )));
+    @include expect( (3, 2, 1)            not-to be (1, 2, 3) );
+    @include expect( ("c", "b", "a")      not-to be ("a", "b", "c") );
+    @include expect( (false, true, false) not-to be (true, false, true) );
   }
 
   @include it("should expect two equal lists with different seperators to be equal") {
-    @include should(expect( 1 2 3 ),           to( be( (1, 2, 3) )));
-    @include should(expect( "a" "b" "c" ),     to( be( ("a", "b", "c") )));
-    @include should(expect( true false true ), to( be( (true, false, true) )));
+    @include expect( (1 2 3)           to be (1, 2, 3) );
+    @include expect( ("a" "b" "c")     to be ("a", "b", "c") );
+    @include expect( (true false true) to be (true, false, true) );
   }
 
   @include it("should expect two equal lists built up programmatically to be equal") {
@@ -62,9 +62,9 @@
       $booleans-out: append($booleans-out, nth($booleans, $i), comma);
     }
 
-    @include should(expect($numbers-out ), to( be( (1, 2, 3) )));
-    @include should(expect($strings-out ), to( be( ("a", "b", "c") )));
-    @include should(expect($booleans-out), to( be( (true, false, true) )));
+    @include expect( $numbers-out  to be (1, 2, 3) );
+    @include expect( $strings-out  to be ("a", "b", "c") );
+    @include expect( $booleans-out to be (true, false, true) );
   }
 
   @include it("should expect two unequal lists built up programmatically not to be equal") {
@@ -82,9 +82,9 @@
       $booleans-out: append($booleans-out, nth($booleans, $i), comma);
     }
 
-    @include should(expect($numbers-out ), not-to( be( (3, 2, 1) )));
-    @include should(expect($strings-out ), not-to( be( ("c", "b", "a") )));
-    @include should(expect($booleans-out), not-to( be( (false, true, false) )));
+    @include expect( $numbers-out  not-to be (3, 2, 1) );
+    @include expect( $strings-out  not-to be ("c", "b", "a") );
+    @include expect( $booleans-out not-to be (false, true, false) );
   }
 }
 

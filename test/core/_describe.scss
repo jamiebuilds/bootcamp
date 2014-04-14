@@ -1,0 +1,17 @@
+@include describe("Describe") {
+  @include it("should describe a module") {
+    @include expect(true to be true);
+  }
+
+  @include describe("Inner Describe 1") {
+    @include it("should describe a sub-module") {
+      @include expect(true to be true);
+    }
+  }
+
+  @include describe("Inner Describe 2") {
+    @include it("should describe a sub-module") {
+      @include expect(true to be true);
+    }
+  }
+}

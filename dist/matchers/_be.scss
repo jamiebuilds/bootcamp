@@ -1,3 +1,25 @@
-@function be($value) {
-  @return should("be", $value, bc-util-equal( actual(), $value ) );
+@function bootcamp-matcher-be($a, $b) {
+  @if length($a) != length($b) {
+    @return false;
+  }
+
+  @for $i from 1 through length($a) {
+    $a-item: nth($a, $i);
+    $b-item: nth($b, $i);
+
+    @if type-of( $a-item ) == list
+    and type-of( $b-item ) == list {
+      @if not be( $a-item, $b-item ) {
+        @return false;
+      }
+    }
+
+    @else if $a-item != $b-item {
+      @return false;
+    }
+  }
+
+  @return true;
 }
+
+@include bootcamp-register-matcher("bootcamp-matcher-be", "be");
