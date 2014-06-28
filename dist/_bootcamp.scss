@@ -1,3 +1,5 @@
+@import "lib/sassyjson";
+
 @import "core/variables/settings";
 
 @import "core/variables/helpers";
@@ -22,7 +24,6 @@
 @import "utils/equal";
 @import "utils/list-join";
 @import "utils/power";
-@import "utils/stringify";
 
 @import "matchers/be";
 @import "matchers/equal";
@@ -43,5 +44,3 @@
 @import "matchers/types/be-null";
 @import "matchers/types/be-truthy";
 @import "matchers/types/have-type-of";
-
-

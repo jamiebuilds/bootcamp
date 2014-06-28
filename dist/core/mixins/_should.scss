@@ -5,8 +5,8 @@
 
   $bc-asserts: $bc-asserts + 1 !global;
 
-  $bc-actual: bc-util-stringify($bc-actual) !global;
-  $bc-expect: bc-util-stringify($bc-expect) !global;
+  $bc-actual: json-encode($bc-actual) !global;
+  $bc-expect: json-encode($bc-expect) !global;
 
   @if not $expect {
     $bc-passing: false !global;
