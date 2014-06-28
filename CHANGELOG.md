@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.1.6 - 2014-6-27
+
+- Switch to SassyJson
+
 #### 1.1.5 - 2014-3-21
 
 - Grunt: Fail instead of warn
