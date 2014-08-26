@@ -1,0 +1,17 @@
+@import "../bootcamp";
+
+$bc-setting-verbose:  true;
+$bc-setting-warnings: true;
+
+@include runner-start;
+@import "failureCase";
+@include runner-end;
+
+
+$bc-setting-verbose:  false;
+$bc-setting-warnings: false;
+
+@include runner-start;
+@import "failureCase";
+@include runner-end;
+
