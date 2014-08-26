@@ -1,6 +1,6 @@
 {
   "name": "bootcamp",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "A pure Sass testing framework in the style of Jasmine",
   "keywords": [
     "bootcamp",
@@ -42,14 +42,13 @@
     "colors": "~0.6.2"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-init": "~0.3.1",
-    "grunt-contrib-sass": "~0.7.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-sass": "~0.7.2"
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.7.3"
   },
   "engines": {
     "node": ">=0.8.0",
