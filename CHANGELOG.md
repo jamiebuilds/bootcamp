@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.1.7 - 2014-8-31
+
+- Updated npm dependencies
+
 #### 1.1.6 - 2014-6-27
 
 - Switch to SassyJson
