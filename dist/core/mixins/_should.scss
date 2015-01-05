@@ -1,3 +1,4 @@
+@charset "utf-8";
 @mixin should($actual, $expect) {
   @if $bc-error {
     $expect: false !global;
