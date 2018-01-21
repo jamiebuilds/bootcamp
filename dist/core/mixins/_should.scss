@@ -15,7 +15,7 @@
   @if not $expect or $bc-setting-verbose {
     $status: " ✗";
 
-    @if $bc-passing {
+    @if $expect {
       $status: " ✔";
     }
 

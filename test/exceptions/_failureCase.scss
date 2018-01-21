@@ -1,0 +1,16 @@
+@include describe("Output of 'Failed'") {
+  @include it("not to be") {
+    @include should( expect( 1 ),  to( equal(1) ));
+  }
+  @include it("to only 1st items") {
+    @include should( expect( 1 ),  to( equal(0) ));
+    @include should( expect( 2 ),  to( equal(2) ));
+  }
+  @include it("to 2nd and 5th items") {
+    @include should( expect( 1 ),  to( equal(1) ));
+    @include should( expect( 2 ),  to( equal(0) ));
+    @include should( expect( 3 ),  to( equal(2) ));
+    @include should( expect( 4 ),  to( equal(3) ));
+    @include should( expect( 5 ),  to( equal(0) ));
+  }
+}
