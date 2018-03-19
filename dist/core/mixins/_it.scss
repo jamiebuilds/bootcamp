@@ -1,3 +1,4 @@
+@charset "utf-8";
 @mixin it($statement) {
   $bc-total: $bc-total + 1 !global;
 
